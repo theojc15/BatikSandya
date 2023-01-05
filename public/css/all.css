@@ -1,0 +1,113 @@
+body {
+    background-color: #FFFBF5;
+}
+
+/* Color */
+
+.orange {
+    color: #E38B2A !important;
+}
+
+.soft-orange {
+    background-color:  #FDEEDC;
+}
+
+/* Navbar */
+
+.navbar {
+    background-color: #FFFBF5 !important;
+}
+
+.nav-link {
+    color: #E38B2A;
+}
+
+.nav-link:hover {
+    color: #9c5911;
+}
+
+/* Button */
+
+.btn {
+    background-color: #E38B2A !important;
+    color: #FFFBF5;
+    vertical-align: middle;
+}
+
+.btn:hover {
+    color: #FFFBF5;
+    background-color: #9c5911 !important;
+}
+
+.no-margin {
+    margin: 0px 0px 0px 0px !important;
+}
+
+/* Register */
+
+.label-form {
+    font-weight: 600;
+}
+
+.header-form {
+    font-weight: bold;
+}
+
+.form-control {
+    border-color: #E38B2A;
+}
+
+.form-control:focus {
+    border-color: #E38B2A;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #E38B2A;
+}
+
+.form-control:valid {
+    background-color:  #FDEEDC !important;
+}
+
+.input-group-text {
+    border-color: #E38B2A;
+}
+
+.fas {
+    color: #E38B2A;
+}
+
+.fas:hover {
+    color: #9c5911;
+}
+
+.far {
+    color: #E38B2A;
+}
+
+.input-group-text {
+    background-color:  #ffe3c1!important;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill{ 
+    -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
+    -webkit-text-fill-color: green;
+}
+
+input:-webkit-autofill:focus, textarea:-webkit-autofill { 
+    -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
+    -webkit-text-fill-color: green;
+}
+
+input[type="date"]:in-range::-webkit-datetime-edit-year-field, 
+input[type="date"]:in-range::-webkit-datetime-edit-month-field, 
+input[type="date"]:in-range::-webkit-datetime-edit-day-field, 
+input[type="date"]:in-range::-webkit-datetime-edit-text { 	
+    color: transparent; 
+}
+
+/* Login */
+
+.card-login {
+    --bs-card-border-color: none !important;
+    --bs-card-border-radius: 0m;
+    --bs-card-box-shadow: none !important;
+    background-color: none !important;
+}
