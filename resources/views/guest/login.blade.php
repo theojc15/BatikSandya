@@ -14,7 +14,7 @@
                                 @csrf
                                 <div class="row pb-3" style="padding: 0rem 1rem">
                                     <label class="mb-2" for="inputEmail" style="padding-left: 0.3rem">Email</label>
-                                    <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                    <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email" value="{{ old('email') }}">
                                 </div>
                                 <div class="row pb-3" style="padding: 0rem 1rem">
                                     <label class="mb-2" for="inputPassword" style="padding-left: 0.3rem">Password</label>

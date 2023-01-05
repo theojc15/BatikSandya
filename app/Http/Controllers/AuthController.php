@@ -22,9 +22,9 @@ class AuthController extends Controller
             'name' => 'required|string|min:5',
             'username' => 'required|string|min:5',
             'email' => 'required|email:rfc,dns|unique:users',
-            'password'=>'required|alpha_num|min:8',
-            're-password'=>'required|same:password',
             'phone'=>'required|integer',
+            'password'=>'required|alpha_num|min:8',
+            'confpassword'=>'required|same:password',
             'date_of_birth' => 'required|date|after:01-01-1900|before:today',
             'gender' => 'required',
             'address'=> 'required'
@@ -32,11 +32,13 @@ class AuthController extends Controller
 
         $user = new User();
         $user->name = $request->name;
+        $user->username = $request->username;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+        $user->phone = '+62' + $request->phone;
         $user->gender = $request->gender;
         $user->DOB = $request->date_of_birth;
-        $user->country_id = $request->country;
+        $user->address = $request->address;
         $user->role = 'Customer';
 
         $user->save();
