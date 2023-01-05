@@ -22,6 +22,10 @@ Route::get('/dashboard', function () {
     return view('all.dashboard');
 });
 
+Route::get('/detail', function () {
+    return view('all.detail');
+});
+
 
 // Guest
 Route::get('/register', [AuthController::class, 'register']);
