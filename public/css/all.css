@@ -9,7 +9,7 @@ body {
 }
 
 .soft-orange {
-    background-color:  #FDEEDC;
+    background-color: #FDEEDC;
 }
 
 /* Navbar */
@@ -86,21 +86,23 @@ body {
     background-color:  #ffe3c1!important;
 }
 
-input:-webkit-autofill, textarea:-webkit-autofill{ 
+input:-webkit-autofill,
+textarea:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
     -webkit-text-fill-color: rgb(0, 0, 0);
 }
 
-input:-webkit-autofill:focus, textarea:-webkit-autofill { 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
     -webkit-text-fill-color: rgb(0, 0, 0);
 }
 
-input[type="date"]:in-range::-webkit-datetime-edit-year-field, 
-input[type="date"]:in-range::-webkit-datetime-edit-month-field, 
-input[type="date"]:in-range::-webkit-datetime-edit-day-field, 
-input[type="date"]:in-range::-webkit-datetime-edit-text { 	
-    color: transparent; 
+input[type="date"]:in-range::-webkit-datetime-edit-year-field,
+input[type="date"]:in-range::-webkit-datetime-edit-month-field,
+input[type="date"]:in-range::-webkit-datetime-edit-day-field,
+input[type="date"]:in-range::-webkit-datetime-edit-text {
+    color: transparent;
 }
 
 .auth .radio-button {
@@ -123,3 +125,142 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
 .auth .link-hover-register:hover {
     color: #9c5911 !important;
 }
+
+/* dashboard */
+.dashboard form {
+    display: flex;
+    align-items: center;
+    border: 2px #E38B2A solid;
+    border-radius: 20px;
+}
+
+.dashboard input {
+    color: #E38B2A;
+    padding: 0.5em;
+    border: none;
+    outline: none;
+    flex: 1;
+    background-color: #FDEEDC;
+    border-radius: 20px 0 0 20px;
+    padding-left: 1.5vw;
+}
+
+.dashboard input::placeholder {
+    color: #E38B2A;
+}
+
+.dashboard .search-btn {
+    padding: 0.5em;
+    padding-right: 1.5vw;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #E38B2A;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #FDEEDC;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.dashboard button:hover {
+    color: #111;
+}
+
+.dashboard .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.dashboard .card-container .row {
+    margin: 0 !important;
+}
+
+.dashboard .card {
+    border-radius: 0;
+}
+
+.dashboard .card-link {
+    text-decoration: none;
+    color: #E38B2A;
+}
+
+.dashboard .card-img-top {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.dashboard .container-title {
+    background-color: #E38B2A;
+    height: 7vh;
+}
+
+.dashboard .container-title h5 {
+    margin: 0;
+    font-size: 2em;
+    color: #FDEEDC;
+    width: auto !important;
+}
+
+.dashboard .container-title a {
+    text-decoration: none;
+    color: #FDEEDC;
+    font-size: 1em;
+    width: auto;
+}
+
+.dashboard .view-all {
+    width: 80%;
+}
+
+.dashboard .container-body {
+    background-color: #FFFBF5;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    padding: 1.5vh 0 1.5vh 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.dashboard .container-body-detail {
+    background-color: white;
+    flex-wrap: wrap;
+    padding: 1.5vh 0 1.5vh 0;
+}
+
+.dashboard .container-body .col {
+    margin-top: 0 !important;
+}
+
+.dashboard .container-body::-webkit-scrollbar {
+    height: 1vh;
+}
+
+.dashboard .container-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dashboard .container-body::-webkit-scrollbar-thumb {
+    background: #E38B2A;
+}
+
+.dashboard .container-body::-webkit-scrollbar-thumb:hover {
+    background: #db7b13;
+}
+
+.dashboard .add-cart-btn {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: none;
+    background-color: #E38B2A;
+    color: #FDEEDC;
+}
+
+.dashboard .add-cart-btn i {
+    margin: 0 0.5vw 0 1vw;
+}
+
+/* end dashboard */
