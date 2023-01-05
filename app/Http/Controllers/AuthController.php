@@ -20,7 +20,7 @@ class AuthController extends Controller
     public function registercheck(Request $request) {
         $validate = $request->validate([
             'name' => 'required|string|min:5',
-            'username' => 'required|string|min:5',
+            'username' => 'required|string|min:5|unique:users',
             'email' => 'required|email:rfc,dns|unique:users',
             'phone'=>'required|integer',
             'password'=>'required|alpha_num|min:8',
