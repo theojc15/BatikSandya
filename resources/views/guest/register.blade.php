@@ -28,19 +28,23 @@
                             <input type="email" class="form-control" id="email" placeholder="Input Your Email Here">
                         </div>
                         <div class="col">
-                            <!-- <div class="input-group-prepend">
-                                <span class="input-group-text rounded-left">IDR</span>
-                            </div> -->
                             <label class="mb-2" for="phone">Phone Number</label>
-                            <input type="text" class="form-control" id="phone" placeholder="Input Your Phone Number Here">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text rounded-left">+62</span>
+                                </div>
+                                <input type="text" class="form-control" id="phone" placeholder="Input Your Phone Number Here">
+                            </div>
                         </div>
                     </div>
 
                     <div class="row align-items-center g-3 pt-3">
                         <div class="col">
                             <label class="mb-2" for="password">Password</label>
-                            <input name="password" class="form-control" id="id_password" placeholder="Input Your Password Here">
-                                <!-- <i class="far fa-eye" id="togglePassword"></i> -->
+                            <div class="input-group">
+                                <input name="password" class="form-control" id="id_password" placeholder="Input Your Password Here">
+                                    <span class="input-group-text"><i class="far fa-eye" id="togglePassword"></i> </span>
+                            </div>
                         </div>
                         <div class="col">
                             <label class="mb-2" for="dob">Date of Birth</label>
@@ -50,8 +54,11 @@
 
                     <div class="row g-3 pt-3">
                         <div class="col">
-                            <label class="mb-2" for="inputEmail" type="password">Confirm Password</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Re-type Your Password">
+                            <label class="mb-2" for="conf-password">Confirm Password</label>
+                            <div class="input-group">
+                                <input name="confpassword" class="form-control" id="conf_password" placeholder="Re-Type Your Password">
+                                    <span class="input-group-text"><i class="far fa-eye" id="toggleconfPassword"></i> </span>
+                            </div>
                         </div>
                         <div class="col">
                             <div>
@@ -65,8 +72,8 @@
                     </div>
 
                     <div class="form-group mb-3 pt-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label for="address" class="form-label">Address</label>
+                        <textarea class="form-control" id="address" rows="3"></textarea>
                     </div>
 
                     <div class="d-grid mx-auto pt-3">
@@ -87,6 +94,17 @@
         // toggle the type attribute
         const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
         password.setAttribute('type', type);
+        // toggle the eye slash icon
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    const toggleconfPassword = document.querySelector('#toggleconfPassword');
+    const confpassword = document.querySelector('#conf_password');
+
+    toggleconfPassword.addEventListener('click', function (e) {
+        // toggle the type attribute
+        const type = confpassword.getAttribute('type') === 'password' ? 'text' : 'password';
+        confpassword.setAttribute('type', type);
         // toggle the eye slash icon
         this.classList.toggle('fa-eye-slash');
     });
