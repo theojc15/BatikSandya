@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title', 'register')
+@section('title', 'login')
 
 @section('content')
     <div class="login-form" style="padding-top: 5rem">
@@ -10,14 +10,15 @@
                     <div class="card" style="height: auto; width: 35rem;">
                         <h2 class="card-header text-left">Login</h2>
                         <div class="card-body">
-                            <form>
+                            <form method="POST" action="/login">
+                                @csrf
                                 <div class="row pb-3" style="padding: 0rem 1rem">
                                     <label class="mb-2" for="inputEmail" style="padding-left: 0.3rem">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                    <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
                                 </div>
                                 <div class="row pb-3" style="padding: 0rem 1rem">
                                     <label class="mb-2" for="inputPassword" style="padding-left: 0.3rem">Password</label>
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                    <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
                                 </div>
                                 <div class="row pb-3" style="padding: 0rem 1rem">
                                     <div class="col-6 col-md-6" style="padding-left: 0.1rem">
@@ -27,6 +28,11 @@
                                         <a href="">Forgot password?</a>
                                     </div>
                                 </div>
+                                @if ($errors->any())
+                                    <div class="alert alert-danger form-outline mb-4" role="alert">
+                                        {{$errors->first()}}
+                                    </div>
+                                @endif
                                 <div class="row pb-3" style="padding: 0rem 1rem">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
