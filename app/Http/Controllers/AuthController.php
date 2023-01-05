@@ -30,6 +30,11 @@ class AuthController extends Controller
             'address'=> 'required'
         ]);
 
+        if($request->phone[0] == '+' or $request->phone[0] == '-') {
+            return redirect()->back()->withErrors('The phone must be an integer.')
+            ->withInput($request->only('name', 'username', 'email', 'date_of_birth', 'gender', 'address'));
+        }
+
         $user = new User();
         $user->name = $request->name;
         $user->username = $request->username;
