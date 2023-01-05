@@ -22,3 +22,4 @@ Route::get('/', function () {
 // Guest
 Route::get('/register', [AuthController::class, 'register']);
 Route::get('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'logincheck']);
