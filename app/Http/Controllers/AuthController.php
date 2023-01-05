@@ -68,12 +68,20 @@ class AuthController extends Controller
                 Cookie::queue('last_password', $request->password, 120);
             }
 
-            return redirect()->intended('/');
+            return redirect()->intended('/dashboard');
         }
 
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
             'password' => 'The provided credentials do not match our records.'
         ])->onlyInput('email', 'password');
+    }
+
+    public function logout()
+    {
+        session()->flush();
+        Auth::logout();
+
+        return redirect('login');
     }
 }

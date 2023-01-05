@@ -88,12 +88,12 @@ body {
 
 input:-webkit-autofill, textarea:-webkit-autofill{ 
     -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
-    -webkit-text-fill-color: green;
+    -webkit-text-fill-color: rgb(0, 0, 0);
 }
 
 input:-webkit-autofill:focus, textarea:-webkit-autofill { 
     -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
-    -webkit-text-fill-color: green;
+    -webkit-text-fill-color: rgb(0, 0, 0);
 }
 
 input[type="date"]:in-range::-webkit-datetime-edit-year-field, 
@@ -103,11 +103,23 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
     color: transparent; 
 }
 
+.radio-button {
+    accent-color: #E38B2A;
+}
+
 /* Login */
 
 .card-login {
     --bs-card-border-color: none !important;
     --bs-card-border-radius: 0m;
     --bs-card-box-shadow: none !important;
-    background-color: none !important;
+    --bs-card-cap-bg: transparent;
+}
+
+.checklist {
+    accent-color: #E38B2A;
+}
+
+.link-hover-register:hover {
+    color: #9c5911 !important;
 }

@@ -25,7 +25,7 @@
                     <div class="row align-items-center g-3 pt-3">
                         <div class="col">
                             <label class="label-form orange mb-2" for="email">Email</label>
-                            <input name="email" type="email" class="form-control" id="email" value="{{ old('email') }}">
+                            <input name="email" type="text" class="form-control" id="email" value="{{ old('email') }}">
                         </div>
                         <div class="col">
                             <label class="label-form orange mb-2" for="phone">Phone Number</label>
@@ -64,9 +64,9 @@
                             <div>
                                 <label class="label-form orange mb-2 align-items-center"> Gender </label>
                             </div>
-                            <input class = "orange" type="radio" id="male" name="gender" value="male" {{ old('gender')=="male" ? 'checked='.'"'.'checked'.'"' : '' }}>
+                            <input class = "orange radio-button" type="radio" id="male" name="gender" value="male" {{ old('gender')=="male" ? 'checked='.'"'.'checked'.'"' : '' }}>
                             <label class = "orange" for="male"> Male</label>
-                            <input type="radio" id="female" name="gender" value="female" {{ old('gender')=="female" ? 'checked='.'"'.'checked'.'"' : '' }}>
+                            <input class = "orange radio-button" type = "radio" id="female" name="gender" value="female" {{ old('gender')=="female" ? 'checked='.'"'.'checked'.'"' : '' }}>
                             <label class = "orange" for="female">Female</label>
                         </div>
                     </div>
@@ -83,6 +83,9 @@
                     @endif
                     <div class="d-grid mx-auto pt-3">
                         <button type="submit" class="btn btn-block"><h4 class="no-margin">REGISTER</h4></button>
+                    </div>
+                    <div class="row pt-3" style="padding: 0rem 1rem">
+                        <p class = "orange" style="padding: 0rem 0rem">Already have an account? <a class = "orange link-hover-register" href="/login"> Login Here</a>.</p>
                     </div>
                 </form>
             </div>

@@ -15,7 +15,11 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('all.dashboard');
+});
+
+Route::get('/dashboard', function () {
+    return view('all.dashboard');
 });
 
 
@@ -24,3 +28,6 @@ Route::get('/register', [AuthController::class, 'register']);
 Route::post('/register', [AuthController::class, 'registercheck']);
 Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'logincheck']);
+
+// Admin & User
+Route::get('/logout', [AuthController::class, 'logout']);
