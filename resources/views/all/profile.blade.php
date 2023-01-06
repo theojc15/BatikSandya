@@ -15,49 +15,49 @@
                             <div class="form-group mb-3">
                                 <label class="mb-2"> Name </label>
                                 <div class="value-col">
-                                    test name
+                                    {{ Auth::user()->name }}
                                 </div>
 
                             </div>
                             <div class="form-group mb-3">
                                 <label class="mb-2"> Username </label>
                                 <div class="value-col">
-                                    test username
+                                    {{ Auth::user()->username }}
                                 </div>
 
                             </div>
                             <div class="form-group mb-3">
                                 <label class="mb-2"> Email </label>
                                 <div class="value-col">
-                                    test email
+                                    {{ Auth::user()->email }}
                                 </div>
 
                             </div>
                             <div class="form-group mb-3">
                                 <label class="mb-2"> Gender </label>
                                 <div class="value-col">
-                                    test gender
+                                    {{ Auth::user()->gender }}
                                 </div>
 
                             </div>
                             <div class="form-group mb-3">
                                 <label class="mb-2"> Date of Birth </label>
                                 <div class="value-col">
-                                    test dob
+                                    {{ Auth::user()->DOB }}
                                 </div>
 
                             </div>
                             <div class="form-group mb-3">
                                 <label class="mb-2"> Phone Number </label>
                                 <div class="value-col">
-                                    test phone number
+                                    {{ Auth::user()->phone }}
                                 </div>
 
                             </div>
                             <div class="form-group mb-3">
                                 <label class="mb-2"> Address </label>
                                 <div class="value-col">
-                                    test address
+                                    {{ Auth::user()->address }}
                                 </div>
 
                             </div>

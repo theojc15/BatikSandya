@@ -77,7 +77,7 @@ class AuthController extends Controller
                 Cookie::queue('last_password', $request->password, 120);
             }
 
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/');
         }
 
         return back()->withErrors([
