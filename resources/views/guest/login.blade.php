@@ -21,7 +21,7 @@
                                 <label class="label-form orange mb-2" for="inputPassword" style="padding-left: 0.3rem">Password</label>
                                 <div class="input-group ">
                                     <input name="password" class="form-control" id="id_password">
-                                        <span class="input-group-text"><i class="far fa-eye" id="togglePassword"></i> </span>
+                                        <span class="input-group-icon input-group-text"><i class="far fa-eye" id="togglePassword"></i> </span>
                                 </div>
                             </div>
                             <div class="row pb-3" style="padding: 0rem 1rem">
