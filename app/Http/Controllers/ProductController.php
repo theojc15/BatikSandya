@@ -36,6 +36,6 @@ class ProductController extends Controller
 
         $products = Product::where('category_id', 'like', $id)->paginate(10);
 
-        return view('viewcategory', ['categories'=>$categories, 'products'=>$products]);
+        return view('all.category', ['categories'=>$categories, 'products'=>$products]);
     }
 }
