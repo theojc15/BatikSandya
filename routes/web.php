@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,7 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('all.dashboard');
-});
+Route::get('/', [ProductController::class, 'homeProduct']);
 
 Route::get('/dashboard', function () {
     return view('all.dashboard');
