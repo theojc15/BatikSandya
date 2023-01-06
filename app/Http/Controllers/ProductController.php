@@ -14,18 +14,6 @@ class ProductController extends Controller
         return view('all.dashboard', ['categories'=>$categories]);
     }
 
-    public function adminProduct() {
-        $categories = Category::all();
-
-        return view('admin.dashboard', ['categories'=>$categories]);
-    }
-
-    public function addProduct() {
-        $categories = Category::all();
-
-        return view('admin.add', ['categories'=>$categories]);
-    }
-
     public function detail($id) {
         $categories = Category::all();
         $product = Product::find($id);
@@ -44,5 +32,19 @@ class ProductController extends Controller
         $products = Product::where('category_id', 'like', $category[0]->id)->paginate(10);
 
         return view('all.category', ['categories'=>$categories, 'products'=>$products]);
+    }
+
+    public function adminProduct() {
+        $categories = Category::all();
+        $products = Product::paginate(5, ['*'], 'products');
+        $categories2 = Category::paginate(5, ['*'], 'categories');
+
+        return view('admin.dashboard', ['categories'=>$categories, 'products'=>$products, 'categories2'=>$categories2]);
+    }
+
+    public function addProduct() {
+        $categories = Category::all();
+
+        return view('admin.add', ['categories'=>$categories]);
     }
 }
