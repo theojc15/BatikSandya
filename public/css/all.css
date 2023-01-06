@@ -66,8 +66,16 @@ body {
     background-color: #FDEEDC !important;
 }
 
-.auth .input-group-text {
-    border-color: #E38B2A;
+.auth .input-group-phone {
+    border-color: #ffe3c1;
+    background-color:  #E38B2A!important;
+    color: #FFFBF5;
+}
+
+.auth .input-group-icon {
+    border-color: #ffe3c1;
+    background-color:  #E38B2A!important;
+    color: #FFFBF5;
 }
 
 .navb .fas {
@@ -82,16 +90,9 @@ body {
     color: #E38B2A;
 }
 
-.auth .input-group-text {
-    background-color: #ffe3c1 !important;
-}
 
-input:-webkit-autofill,
-textarea:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
-    -webkit-text-fill-color: rgb(0, 0, 0);
-}
 
+    
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
@@ -451,4 +452,62 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
 .admin_dashboard .card-parent {
     background-color: #FFFBF5 !important;
     --bs-card-border-color: none !important;
+}
+
+/* end dashboard admin */
+
+/* add admin */
+
+.admin_add .orange {
+    font-weight: 500;
+}
+
+.admin_add .form-control, .admin_add .form-select {
+    border-color: #E38B2A;
+}
+
+.admin_add .form-control:focus, .admin_add .form-select:focus {
+    border-color: #E38B2A;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #E38B2A;
+}
+
+.admin_add .form-control:valid, .admin_add .form-select:valid {
+    background-color: #FDEEDC !important;
+}
+
+.admin_add .input-group-text {
+    border-color: #ffe3c1;
+    background-color:  #E38B2A !important;
+    color: #FFFBF5;
+}
+
+.admin_add .form-select {
+    color: #E38B2A !important;
+}
+
+.admin_add .btn-back, .admin_add .btn-add {
+    color: #FFFBF5 !important;
+    --bs-btn-border-color: #E38B2A !important;
+    --bs-btn-bg: #E38B2A !important;
+    --bs-btn-hover-bg: #9c5911 !important;
+    --bs-btn-hover-border-color: #9c5911 !important;
+}
+  
+
+.custom-file-button input[type=file] {
+    margin-left: -2px !important;
+}
+
+.custom-file-button input[type=file]::-webkit-file-upload-button {
+    display: none;
+
+}
+
+.custom-file-button input[type=file]::file-selector-button {
+    display: none;
+}
+
+.custom-file-button:hover .input-group-file {
+    background-color: #9c5911 !important;
+    cursor: pointer;
 }

@@ -32,7 +32,7 @@
                                 <label class="label-form orange mb-2" for="phone">Phone Number</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text rounded-left">+62</span>
+                                        <span class="input-group-phone input-group-text rounded-left">+62</span>
                                     </div>
                                     <input name="phone" type="text" class="form-control" id="phone" value="{{ old('phone') }}" >
                                 </div>
@@ -44,7 +44,7 @@
                                 <label class="label-form orange mb-2" for="password">Password</label>
                                 <div class="input-group">
                                     <input name="password" class="form-control" id="id_password">
-                                        <span class="input-group-text"><i class="far fa-eye" id="togglePassword"></i> </span>
+                                        <span class="input-group-icon input-group-text"><i class="far fa-eye" id="togglePassword"></i> </span>
                                 </div>
                             </div>
                             <div class="col">
@@ -58,7 +58,7 @@
                                 <label class="label-form orange mb-2" for="conf-password">Confirm Password</label>
                                 <div class="input-group">
                                     <input name="confpassword" class="form-control" id="conf_password">
-                                        <span class="input-group-text"><i class="far fa-eye" id="toggleconfPassword"></i> </span>
+                                        <span class="input-group-icon input-group-text"><i class="far fa-eye" id="toggleconfPassword"></i> </span>
                                 </div>
                             </div>
                             <div class="col">
