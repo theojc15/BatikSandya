@@ -17,8 +17,11 @@ class ProductController extends Controller
     public function detail($id) {
         $categories = Category::all();
         $product = Product::find($id);
-        $products = Product::where('category_id', '=', $product->category_id)->except($id);
-
-        return view('all.detail', ['categories'=>$categories, 'product'=>$product, 'products'=>$product]);
+        $products = Product::where([
+            ['category_id', '=', $product->category_id],
+            ['id', '!=', $id]
+        ])->get();
+        // dd($products);
+        return view('all.detail', ['categories'=>$categories, 'product'=>$product, 'products'=>$products]);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,10 +13,13 @@ use Illuminate\Support\Facades\Session;
 class AuthController extends Controller
 {
     public function register () {
-        return view ('guest.register');
+        $categories = Category::all();
+
+        return view ('guest.register', ['categories'=>$categories]);
     }
     public function login () {
-        return view ('guest.login');
+        $categories = Category::all();
+        return view ('guest.login', ['categories'=>$categories]);
     }
     public function registercheck(Request $request) {
         $validate = $request->validate([
