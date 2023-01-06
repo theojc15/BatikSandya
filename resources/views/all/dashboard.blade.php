@@ -14,6 +14,14 @@
                 </div>
             </div>
 
+            <div class="row mt-5">
+                <div class="col">
+                    <div class="dashboard-image-container">
+                        <img src="{{ url('/image/header-dashboard.png') }}" alt="...">
+                    </div>
+                </div>
+            </div>
+
             <div class="card-container mt-5">
                 <div class="row container-title d-flex align-items-center">
                     <div class="col">
