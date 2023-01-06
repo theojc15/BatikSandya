@@ -37,11 +37,12 @@ class ProductController extends Controller
         return view('all.detail', ['categories'=>$categories, 'product'=>$product, 'products'=>$products]);
     }
 
-    public function viewcategory($id) {
+    public function viewcategory($name) {
         $categories = Category::all();
+        $category = Category::where('name', 'like', $name)->get();
 
-        $products = Product::where('category_id', 'like', $id)->paginate(10);
+        $products = Product::where('category_id', 'like', $category[0]->id)->paginate(10);
 
-        return view('viewcategory', ['categories'=>$categories, 'products'=>$products]);
+        return view('all.category', ['categories'=>$categories, 'products'=>$products]);
     }
 }
