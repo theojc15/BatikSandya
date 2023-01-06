@@ -27,7 +27,7 @@ Route::get('/category', function () {
     return view('all.category');
 });
 
-Route::get('/admin_dashboard', [ProductController::class, 'adminProduct']);
+Route::get('/manage', [ProductController::class, 'adminProduct']);
 
 // Guest
 Route::get('/register', [AuthController::class, 'register']);

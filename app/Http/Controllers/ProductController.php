@@ -30,4 +30,12 @@ class ProductController extends Controller
         // dd($products);
         return view('all.detail', ['categories'=>$categories, 'product'=>$product, 'products'=>$products]);
     }
+
+    public function viewcategory($id) {
+        $categories = Category::all();
+
+        $products = Product::where('category_id', 'like', $id)->paginate(10);
+
+        return view('viewcategory', ['categories'=>$categories, 'products'=>$products]);
+    }
 }
