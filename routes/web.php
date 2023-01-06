@@ -25,6 +25,9 @@ Route::get('/detail', function () {
     return view('all.detail');
 });
 
+Route::get('/category', function () {
+    return view('all.category');
+});
 
 // Guest
 Route::get('/register', [AuthController::class, 'register']);
