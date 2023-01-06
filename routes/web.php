@@ -28,6 +28,7 @@ Route::get('/category', function () {
 });
 
 Route::get('/manage', [ProductController::class, 'adminProduct']);
+Route::get('/add', [ProductController::class, 'addProduct']);
 
 // Guest
 Route::get('/register', [AuthController::class, 'register']);

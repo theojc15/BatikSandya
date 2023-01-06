@@ -20,6 +20,12 @@ class ProductController extends Controller
         return view('admin.dashboard', ['categories'=>$categories]);
     }
 
+    public function addProduct() {
+        $categories = Category::all();
+
+        return view('admin.add', ['categories'=>$categories]);
+    }
+
     public function detail($id) {
         $categories = Category::all();
         $product = Product::find($id);
