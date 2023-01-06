@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\Session;
+use PDO;
 
 class ProductController extends Controller
 {
@@ -62,5 +63,12 @@ class ProductController extends Controller
         $categories = Category::all();
 
         return view('all.profile', ['categories' => $categories]);
+    }
+
+    public function editProfile()
+    {
+        $categories = Category::all();
+
+        return view('all.editProfile', ['categories' => $categories]);
     }
 }

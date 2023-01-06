@@ -397,7 +397,8 @@ img {
 
 /* profile */
 
-.profile .value-col {
+.profile .value-col,
+.edit-profile .value-col {
     background-color: #E5DBCE;
     padding: 5px 8px 5px 8px;
     font-weight: 400;
@@ -405,7 +406,8 @@ img {
 
 }
 
-.profile .card-header {
+.profile .card-header,
+.edit-profile .card-header {
     border: none;
     background-color: transparent;
     color: #E38B2A;
@@ -414,14 +416,16 @@ img {
     font-weight: bold;
 }
 
-.profile .card {
+.profile .card,
+.edit-profile .card {
     border: none;
     background-color: transparent;
     color: #E38B2A;
     font-weight: bold;
 }
 
-.profile .edit-profile-btn button {
+.profile .edit-profile-btn button,
+.edit-profile .edit-profile-btn button {
     width: 35%;
     border: none;
     background-color: #E38B2A;

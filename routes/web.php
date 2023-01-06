@@ -23,6 +23,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/detail/{id}', [ProductController::class, 'detail']);
 Route::get('/profile', [ProductController::class, 'profile']);
+Route::get('/edit-profile', [ProductController::class, 'editProfile']);
 
 Route::get('/viewall/{name}', [ProductController::class, 'viewcategory']);
 
