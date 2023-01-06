@@ -22,8 +22,9 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/detail/{id}', [ProductController::class, 'detail']);
+Route::get('/profile', [ProductController::class, 'profile']);
 
-Route::get('/viewall/{name}', [\App\Http\Controllers\ProductController::class, 'viewcategory']);
+Route::get('/viewall/{name}', [ProductController::class, 'viewcategory']);
 
 Route::get('/manage', [ProductController::class, 'adminProduct']);
 Route::get('/add', [ProductController::class, 'addProduct']);

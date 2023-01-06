@@ -395,6 +395,43 @@ img {
 
 /* end category*/
 
+/* profile */
+
+.profile .value-col {
+    background-color: #E5DBCE;
+    padding: 5px 8px 5px 8px;
+    font-weight: 400;
+    border: 1px #E38B2A solid;
+
+}
+
+.profile .card-header {
+    border: none;
+    background-color: transparent;
+    color: #E38B2A;
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.profile .card {
+    border: none;
+    background-color: transparent;
+    color: #E38B2A;
+    font-weight: bold;
+}
+
+.profile .edit-profile-btn button {
+    width: 35%;
+    border: none;
+    background-color: #E38B2A;
+    color: #FDEEDC;
+    font-weight: bold;
+    height: 5vh;
+}
+
+/* end profile */
+
 /* dashboard admin */
 
 .admin_dashboard .search-button {
