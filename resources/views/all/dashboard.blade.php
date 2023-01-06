@@ -36,8 +36,8 @@
                         @forelse ($category->product as $product)
                             <div class="col">
                                 <div class="card h-100">
-                                    <img src="{{ asset('image/'.$product->photo) }}" class="img-fluid card-img-top" alt="...">
-                                    <a class="card-link" href="#">
+                                    <a class="card-link" href="/detail/{{ $product->id }}">
+                                        <img src="{{ asset('image/'.$product->photo) }}" class="img-fluid card-img-top" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title">{{$product->name}}</h5>
                                             <p class="card-text">Rp. {{$product->price}}</p>

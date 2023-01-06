@@ -21,9 +21,7 @@ Route::get('/dashboard', function () {
     return view('all.dashboard');
 });
 
-Route::get('/detail', function () {
-    return view('all.detail');
-});
+Route::get('/detail/{id}', [ProductController::class, 'detail']);
 
 
 // Guest

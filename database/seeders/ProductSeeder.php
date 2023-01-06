@@ -19,7 +19,8 @@ class ProductSeeder extends Seeder
             'name'=>'Lanyard misc',
             'detail'=>'Lanyard bermotif misc',
             'price'=>20000,
-            'photo'=>'Lanyard - Misc.png'
+            'photo'=>'Lanyard - Misc.png',
+            'stok'=>0
         ]);
 
         DB::table('products')->insert([
@@ -27,7 +28,8 @@ class ProductSeeder extends Seeder
             'name'=>'Lanyard Yogyakarta - Kawung',
             'detail'=>'Lanyard bermotif Yogyakarta - Kawung',
             'price'=>20000,
-            'photo'=>'Lanyard - Yogyakarta - Kawung.png'
+            'photo'=>'Lanyard - Yogyakarta - Kawung.png',
+            'stok'=>0
         ]);
 
         DB::table('products')->insert([
@@ -35,7 +37,8 @@ class ProductSeeder extends Seeder
             'name'=>'Lanyard - Pekalongan - Terang Bulan',
             'detail'=>'Lanyard bermotif Pekalongan - Terang Bulan',
             'price'=>20000,
-            'photo'=>'Lanyard - Pekalongan - Terang Bulan.png'
+            'photo'=>'Lanyard - Pekalongan - Terang Bulan.png',
+            'stok'=>0
         ]);
     }
 }

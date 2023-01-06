@@ -1,14 +1,14 @@
 <section class = "navb">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
             <img src="{{url('/image/Logo.png')}}" width="45" alt="logo" class="d-inline-block align-middle mr-2"/>
         </a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Home</a>
+                <a class="nav-link" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

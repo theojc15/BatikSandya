@@ -16,16 +16,16 @@
             <div class="row mt-4" style="margin: auto; width: 95%;">
                 <div class="col-6 d-flex">
                     <div class="detail-image-container">
-                        <img src="{{ url('/image/dummy-book.jpg') }}" alt="...">
+                        <img src="{{ asset('image/'.$product->photo) }}" alt="...">
                     </div>
                 </div>
                 <div class="col-6 product-info">
-                    <h1>Nama Produk</h1>
-                    <h3 class="mt-4 mb-5">Rp. 100.000</h3>
+                    <h1>{{$product->name}}</h1>
+                    <h3 class="mt-4 mb-5">Rp. {{$product->price}}</h3>
                     <div class="quantity mb-5 d-flex align-items-center">
                         <label for="kuantitas">Kuantitas:</label>
                         <input type="number" id="kuantitas">
-                        <p style="margin: 0;">Stok 20</p>
+                        <p style="margin: 0;">Stok {{ $product->stok }}</p>
                     </div>
                     <div class="logo-container mb-3 d-flex justify-content-center">
                         <a href=""><img src="{{ url('/image/tokopedia.png') }}" alt="..."></a>
@@ -50,10 +50,7 @@
                         <h5>Item Detail</h5>
                     </div>
                     <div class="desc-body">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure suscipit iusto culpa est ex. Amet
-                            non
-                            aperiam tempora praesentium facilis quibusdam saepe illo ipsa natus atque, expedita corporis, a
-                            provident!</p>
+                        <p>{{ $product->detail }}</p>
                     </div>
                 </div>
             </div>
