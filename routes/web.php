@@ -23,6 +23,9 @@ Route::get('/dashboard', function () {
 
 Route::get('/detail/{id}', [ProductController::class, 'detail']);
 
+Route::get('/category', function () {
+    return view('all.category');
+});
 
 // Guest
 Route::get('/register', [AuthController::class, 'register']);
