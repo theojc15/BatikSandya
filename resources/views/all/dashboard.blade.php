@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4 container-body">
-                        @forelse ($category->product as $product)
+                        @forelse ($category->product->take(10) as $product)
                             <div class="col">
                                 <a class="card-link" href="/detail/{{ $product->id }}">
                                     <div class="card h-100">
