@@ -78,4 +78,11 @@ class ProductController extends Controller
 
         return view('all.editProfile', ['categories' => $categories]);
     }
+
+    public function cart()
+    {
+        $categories = Category::all();
+
+        return view('user.cart', ['categories' => $categories]);
+    }
 }

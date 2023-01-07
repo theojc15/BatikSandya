@@ -39,3 +39,5 @@ Route::get('/manage', [ProductController::class, 'adminProduct']);
 Route::get('/add', [ProductController::class, 'addProduct']);
 Route::get('/edit', [ProductController::class, 'editProduct']);
 
+// User
+Route::get('/cart', [ProductController::class, 'cart']);
