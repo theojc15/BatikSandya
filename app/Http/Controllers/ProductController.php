@@ -58,6 +58,13 @@ class ProductController extends Controller
         return view('admin.add', ['categories' => $categories]);
     }
 
+    public function editProduct()
+    {
+        $categories = Category::all();
+
+        return view('admin.edit', ['categories' => $categories]);
+    }
+
     public function profile()
     {
         $categories = Category::all();

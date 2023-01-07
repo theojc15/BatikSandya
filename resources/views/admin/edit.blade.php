@@ -16,12 +16,11 @@
                     </button>
                 </a>    
                 <div style="position: absolute; left:50%; transform:translate(-50%);">
-                    <h2 class="orange">Add Product</h2>
+                    <h2 class="orange">Edit Product</h2>
                 </div>
             </div>
 
         </div>
-
         
         <div class="card-body">
             <form action="" method="POST" enctype="multipart/form-data">
@@ -91,7 +90,7 @@
                 </div>
 
                 <div class="col-md-12 text-center pt-3">
-                    <button type="submit" class="btn btn-add btn-outline-secondary justify-content-center">ADD</button>
+                    <button type="submit" class="btn btn-add btn-outline-secondary justify-content-center">EDIT</button>
                 </div>
             </form>
         </div>

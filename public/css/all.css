@@ -14,19 +14,26 @@ body {
 
 /* Navbar */
 
-.navbar {
+.navb .navbar,
+.navb .dropdown-menu  {
     background-color: #FFFBF5 !important;
+    border-radius: 0 !important;
 }
 
-.nav-link {
+.navb .nav-link, 
+.navb .fas, 
+.navb .far,
+.navb .dropdown-item {
     color: #E38B2A;
 }
 
-.nav-link:hover {
+.navb .nav-link:hover, .navb .fas:hover {
     color: #9c5911;
 }
 
-/* Button */
+/* End of Navbar */
+
+/* Login and Register */
 
 .auth .btn {
     background-color: #E38B2A !important;
@@ -42,8 +49,6 @@ body {
 .auth .no-margin {
     margin: 0px 0px 0px 0px !important;
 }
-
-/* Register */
 
 .auth .label-form {
     font-weight: 600;
@@ -77,26 +82,11 @@ body {
     background-color:  #E38B2A!important;
     color: #FFFBF5;
 }
-
-.navb .fas {
-    color: #E38B2A;
-}
-
-.navb .fas:hover {
-    color: #9c5911;
-}
-
-.navb .far {
-    color: #E38B2A;
-}
-
-
-
-    
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill {
+   
+.auth input:-webkit-autofill:focus,
+.auth textarea:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
-    -webkit-text-fill-color: rgb(0, 0, 0);
+    -webkit-text-fill-color: #E38B2A;
 }
 
 input[type="date"]:in-range::-webkit-datetime-edit-year-field,
@@ -106,11 +96,9 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
     color: transparent;
 }
 
-.auth .radio-button {
+.auth .radio-button, .auth .checklist {
     accent-color: #E38B2A;
 }
-
-/* Login */
 
 .auth .card-login {
     --bs-card-border-color: none !important;
@@ -119,13 +107,26 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
     --bs-card-cap-bg: transparent;
 }
 
-.auth .checklist {
-    accent-color: #E38B2A;
-}
-
 .auth .link-hover-register:hover {
     color: #9c5911 !important;
 }
+
+.auth .form-control, 
+.auth .btn,
+.auth .input-group-text {
+    border-radius: 0 !important;
+}
+
+.auth .img-login {
+    aspect-ratio: 0 !important;
+}
+
+.auth input:-webkit-autofill, .auth input:focus:-webkit-autofill, .auth input:hover :-webkit-autofill{
+    -webkit-text-fill-color: #E38B2A!important;
+    -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
+}
+
+/* End of Login and Register */
 
 /* dashboard */
 .dashboard form,
@@ -495,61 +496,88 @@ img {
     --bs-card-border-color: none !important;
 }
 
+.admin_dashboard .card {
+    --bs-card-border-radius: 0rem !important;
+}
+
 
 /* end dashboard admin */
 
-/* add admin */
+/* add and edit product admin */
 
-.admin_add .orange {
+.admin_add_and_edit .form-control,
+.admin_add_and_edit .form-select,
+.admin_add_and_edit .input-group-text {
+    border-radius: 0 !important;
+}
+
+.admin_add_and_edit .orange {
     font-weight: 500;
 }
 
-.admin_add .form-control, .admin_add .form-select {
+.admin_add_and_edit .form-control, 
+.admin_add_and_edit .form-select {
     border-color: #E38B2A;
 }
 
-.admin_add .form-control:focus, .admin_add .form-select:focus {
+.admin_add_and_edit .form-control:focus, 
+.admin_add_and_edit .form-select:focus {
     border-color: #E38B2A;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #E38B2A;
 }
 
-.admin_add .form-control:valid, .admin_add .form-select:valid {
+.admin_add_and_edit .form-control:valid, 
+.admin_add_and_edit .form-select:valid {
     background-color: #FDEEDC !important;
 }
 
-.admin_add .input-group-text {
+.admin_add_and_edit .input-group-text {
     border-color: #ffe3c1;
     background-color:  #E38B2A !important;
     color: #FFFBF5;
 }
 
-.admin_add .form-select {
+.admin_add_and_edit .form-select {
     color: #E38B2A !important;
 }
 
-.admin_add .btn-back, .admin_add .btn-add {
+.admin_add_and_edit .btn-back, 
+.admin_add_and_edit .btn-add {
     color: #FFFBF5 !important;
     --bs-btn-border-color: #E38B2A !important;
     --bs-btn-bg: #E38B2A !important;
     --bs-btn-hover-bg: #9c5911 !important;
     --bs-btn-hover-border-color: #9c5911 !important;
+    border-radius: 0 !important;
 }
   
 
-.custom-file-button input[type=file] {
+.admin_add_and_edit .custom-file-button input[type=file] {
     margin-left: -2px !important;
 }
 
-.custom-file-button input[type=file]::-webkit-file-upload-button {
+.admin_add_and_edit .custom-file-button 
+.admin_add_and_edit input[type=file]::-webkit-file-upload-button {
     display: none;
 
 }
 
-.custom-file-button input[type=file]::file-selector-button {
+.admin_add_and_edit .custom-file-button 
+.admin_add_and_edit input[type=file]::file-selector-button {
     display: none;
 }
 
-.custom-file-button:hover .input-group-file {
+.admin_add_and_edit .custom-file-button:hover 
+.admin_add_and_edit .input-group-file {
     background-color: #9c5911 !important;
     cursor: pointer;
 }
+
+.admin_add_and_edit input:-webkit-autofill, 
+.admin_add_and_edit input:focus:-webkit-autofill, 
+.admin_add_and_edit input:hover :-webkit-autofill{
+    -webkit-text-fill-color: #E38B2A!important;
+    -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
+}
+
+/* end add and edit product admin */

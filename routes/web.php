@@ -15,20 +15,13 @@ use App\Http\Controllers\ProductController;
 |
 */
 
+// All
+Route::get('/viewall/{name}', [ProductController::class, 'viewcategory']);
+Route::get('/detail/{id}', [ProductController::class, 'detail']);
 Route::get('/', [ProductController::class, 'homeProduct']);
-
 Route::get('/dashboard', function () {
     return view('all.dashboard');
 });
-
-Route::get('/detail/{id}', [ProductController::class, 'detail']);
-Route::get('/profile', [ProductController::class, 'profile']);
-Route::get('/edit-profile', [ProductController::class, 'editProfile']);
-
-Route::get('/viewall/{name}', [ProductController::class, 'viewcategory']);
-
-Route::get('/manage', [ProductController::class, 'adminProduct']);
-Route::get('/add', [ProductController::class, 'addProduct']);
 
 // Guest
 Route::get('/register', [AuthController::class, 'register']);
@@ -37,4 +30,12 @@ Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'logincheck']);
 
 // Admin & User
+Route::get('/profile', [ProductController::class, 'profile']);
+Route::get('/edit-profile', [ProductController::class, 'editProfile']);
 Route::get('/logout', [AuthController::class, 'logout']);
+
+// Admin
+Route::get('/manage', [ProductController::class, 'adminProduct']);
+Route::get('/add', [ProductController::class, 'addProduct']);
+Route::get('/edit', [ProductController::class, 'editProduct']);
+

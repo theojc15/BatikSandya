@@ -15,12 +15,12 @@
                             @csrf
                             <div class="col pb-3">
                                 <label class="label-form orange mb-2" for="inputEmail" style="padding-left: 0.3rem">Email</label>
-                                <input name="email" type="text" class="form-control" id="inputEmail" value="{{ old('email') }}">
+                                <input name="email" type="text" class="orange form-control" id="inputEmail" value="{{ old('email') }}">
                             </div>
                             <div class="col pb-3">
                                 <label class="label-form orange mb-2" for="inputPassword" style="padding-left: 0.3rem">Password</label>
                                 <div class="input-group ">
-                                    <input name="password" class="form-control" id="id_password">
+                                    <input name="password" class="orange form-control" id="id_password">
                                         <span class="input-group-icon input-group-text"><i class="far fa-eye" id="togglePassword"></i> </span>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="col-md-4 pt-3">
-                <img src="image\login-asset1.png" class="img-fluid" style="max-width: 50%; height: auto;" alt="..." >
+                <img src="image\login-asset1.png" class="img-fluid img-login" style="max-width: 50%; height: auto;" alt="..." >
             </div>
         </div>
     </div>

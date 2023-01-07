@@ -32,7 +32,7 @@
                                 <label class="label-form orange mb-2" for="phone">Phone Number</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-phone input-group-text rounded-left">+62</span>
+                                        <span class="input-group-phone input-group-text">+62</span>
                                     </div>
                                     <input name="phone" type="text" class="form-control" id="phone" value="{{ old('phone') }}" >
                                 </div>
@@ -74,7 +74,7 @@
 
                         <div class="form-group label-form orange mb-3 pt-3">
                             <label for="address" class="form-label">Address</label>
-                            <textarea name="address" class="form-control" id="address" rows="3">{{old('address')}}</textarea>
+                            <textarea name="address" class="orange form-control" id="address" rows="3">{{old('address')}}</textarea>
                         </div>
 
                         @if ($errors->any())
