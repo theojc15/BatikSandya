@@ -8,10 +8,10 @@
         <div class="container-fluid" style="width: 80%; ">
             <div class="card-container mt-5">
                 <div class="row container-title d-flex align-items-center" style="height: 10vh">
-                    <div class="col">
+                    <div class="col" style="padding-left: 30px;">
                         <h5>Transaction Date</h5>
                     </div>
-                    <div class="col d-flex justify-content-end">
+                    <div class="col d-flex justify-content-end" style="padding-right: 30px;">
                         <a href="" style="text-decoration: none; width:auto;">
                             <button type="button" class="btn btn-delete btn-outline-danger rounded-circle"
                                 style="width: 42px; height: 42px">
