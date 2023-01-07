@@ -38,4 +38,4 @@ Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/manage', [ProductController::class, 'adminProduct']);
 Route::get('/add', [ProductController::class, 'addProduct']);
 Route::get('/edit', [ProductController::class, 'editProduct']);
-
+Route::get('/inbox', [ProductController::class, 'inbox']);
