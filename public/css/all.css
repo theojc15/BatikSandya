@@ -15,19 +15,20 @@ body {
 /* Navbar */
 
 .navb .navbar,
-.navb .dropdown-menu  {
+.navb .dropdown-menu {
     background-color: #FFFBF5 !important;
     border-radius: 0 !important;
 }
 
-.navb .nav-link, 
-.navb .fas, 
+.navb .nav-link,
+.navb .fas,
 .navb .far,
 .navb .dropdown-item {
     color: #E38B2A;
 }
 
-.navb .nav-link:hover, .navb .fas:hover {
+.navb .nav-link:hover,
+.navb .fas:hover {
     color: #9c5911;
 }
 
@@ -73,16 +74,16 @@ body {
 
 .auth .input-group-phone {
     border-color: #ffe3c1;
-    background-color:  #E38B2A!important;
+    background-color: #E38B2A !important;
     color: #FFFBF5;
 }
 
 .auth .input-group-icon {
     border-color: #ffe3c1;
-    background-color:  #E38B2A!important;
+    background-color: #E38B2A !important;
     color: #FFFBF5;
 }
-   
+
 .auth input:-webkit-autofill:focus,
 .auth textarea:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
@@ -96,7 +97,8 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
     color: transparent;
 }
 
-.auth .radio-button, .auth .checklist {
+.auth .radio-button,
+.auth .checklist {
     accent-color: #E38B2A;
 }
 
@@ -111,7 +113,7 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
     color: #9c5911 !important;
 }
 
-.auth .form-control, 
+.auth .form-control,
 .auth .btn,
 .auth .input-group-text {
     border-radius: 0 !important;
@@ -121,8 +123,10 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
     aspect-ratio: 0 !important;
 }
 
-.auth input:-webkit-autofill, .auth input:focus:-webkit-autofill, .auth input:hover :-webkit-autofill{
-    -webkit-text-fill-color: #E38B2A!important;
+.auth input:-webkit-autofill,
+.auth input:focus:-webkit-autofill,
+.auth input:hover :-webkit-autofill {
+    -webkit-text-fill-color: #E38B2A !important;
     -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
 }
 
@@ -190,7 +194,8 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
 
 .dashboard .card-container .row,
 .detail .card-container .row,
-.category .card-container .row {
+.category .card-container .row,
+.inbox .card-container .row {
     margin: 0 !important;
 }
 
@@ -233,9 +238,22 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
     width: auto !important;
 }
 
+.inbox .container-title {
+    background-color: #FFD8A9;
+    height: 10vh;
+}
+
+.inbox .container-title h5 {
+    margin: 0;
+    font-size: 1.75em;
+    color: #E38B2A;
+    width: auto !important;
+}
+
 .dashboard .container-title a,
 .detail .container-title a,
-.category .container-title a {
+.category .container-title a,
+.inbox .container-title a {
     text-decoration: none;
     color: #FDEEDC;
     font-size: 1em;
@@ -255,6 +273,17 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
     overflow-x: auto !important;
     padding: 5vh 0 5vh 0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.inbox .container-body {
+    background-color: #FDEEDC;
+    padding: 30px;
+    color: #E38B2A;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 1vh;
 }
 
 .dashboard .container-body-detail,
@@ -312,7 +341,8 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
 
 /* detail */
 .detail .detail-image-container img,
-.dashboard .dashboard-image-container img {
+.dashboard .dashboard-image-container img,
+.inbox .inbox-image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -515,25 +545,25 @@ img {
     font-weight: 500;
 }
 
-.admin_add_and_edit .form-control, 
+.admin_add_and_edit .form-control,
 .admin_add_and_edit .form-select {
     border-color: #E38B2A;
 }
 
-.admin_add_and_edit .form-control:focus, 
+.admin_add_and_edit .form-control:focus,
 .admin_add_and_edit .form-select:focus {
     border-color: #E38B2A;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #E38B2A;
 }
 
-.admin_add_and_edit .form-control:valid, 
+.admin_add_and_edit .form-control:valid,
 .admin_add_and_edit .form-select:valid {
     background-color: #FDEEDC !important;
 }
 
 .admin_add_and_edit .input-group-text {
     border-color: #ffe3c1;
-    background-color:  #E38B2A !important;
+    background-color: #E38B2A !important;
     color: #FFFBF5;
 }
 
@@ -541,7 +571,7 @@ img {
     color: #E38B2A !important;
 }
 
-.admin_add_and_edit .btn-back, 
+.admin_add_and_edit .btn-back,
 .admin_add_and_edit .btn-add {
     color: #FFFBF5 !important;
     --bs-btn-border-color: #E38B2A !important;
@@ -550,33 +580,30 @@ img {
     --bs-btn-hover-border-color: #9c5911 !important;
     border-radius: 0 !important;
 }
-  
+
 
 .admin_add_and_edit .custom-file-button input[type=file] {
     margin-left: -2px !important;
 }
 
-.admin_add_and_edit .custom-file-button 
-.admin_add_and_edit input[type=file]::-webkit-file-upload-button {
+.admin_add_and_edit .custom-file-button .admin_add_and_edit input[type=file]::-webkit-file-upload-button {
     display: none;
 
 }
 
-.admin_add_and_edit .custom-file-button 
-.admin_add_and_edit input[type=file]::file-selector-button {
+.admin_add_and_edit .custom-file-button .admin_add_and_edit input[type=file]::file-selector-button {
     display: none;
 }
 
-.admin_add_and_edit .custom-file-button:hover 
-.admin_add_and_edit .input-group-file {
+.admin_add_and_edit .custom-file-button:hover .admin_add_and_edit .input-group-file {
     background-color: #9c5911 !important;
     cursor: pointer;
 }
 
-.admin_add_and_edit input:-webkit-autofill, 
-.admin_add_and_edit input:focus:-webkit-autofill, 
-.admin_add_and_edit input:hover :-webkit-autofill{
-    -webkit-text-fill-color: #E38B2A!important;
+.admin_add_and_edit input:-webkit-autofill,
+.admin_add_and_edit input:focus:-webkit-autofill,
+.admin_add_and_edit input:hover :-webkit-autofill {
+    -webkit-text-fill-color: #E38B2A !important;
     -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
 }
 

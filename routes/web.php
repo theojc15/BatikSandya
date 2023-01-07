@@ -41,3 +41,5 @@ Route::get('/edit', [ProductController::class, 'editProduct']);
 
 // User
 Route::get('/cart', [ProductController::class, 'cart']);
+
+Route::get('/inbox', [ProductController::class, 'inbox']);
