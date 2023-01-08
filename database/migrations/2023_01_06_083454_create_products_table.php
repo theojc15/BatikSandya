@@ -21,6 +21,8 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->string('photo');
             $table->integer('stok');
+            $table->string('tokopedia_link');
+            $table->string('shopee_link');
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories');
