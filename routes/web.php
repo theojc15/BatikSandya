@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,12 +37,12 @@ Route::get('/forget-password', [AuthController::class, 'forgetPassword']);
 // Admin
 Route::get('/manage', [ProductController::class, 'adminProduct']);
 Route::get('/add', [ProductController::class, 'addProductView']);
-Route::post('/add', [\App\Http\Controllers\ProductController::class, 'addProduct']);
+Route::post('/add', [ProductController::class, 'addProduct']);
 Route::get('/edit/{product}', [ProductController::class, 'editProductView']);
 Route::post('/edit/{product}', [ProductController::class, 'editProduct']);
 Route::get('/delete/{product}', [ProductController::class, 'delete']);
 
 // User
-Route::get('/cart', [ProductController::class, 'cart']);
+Route::get('/cart', [TransactionController::class, 'cart']);
 
 Route::get('/inbox', [ProductController::class, 'inbox']);
