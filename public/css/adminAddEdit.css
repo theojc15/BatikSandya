@@ -1,0 +1,75 @@
+/* add and edit product admin */
+
+.admin_add_and_edit .form-control,
+.admin_add_and_edit .form-select,
+.admin_add_and_edit .input-group-text {
+    border-radius: 0 !important;
+}
+
+.admin_add_and_edit .orange {
+    font-weight: 500;
+}
+
+.admin_add_and_edit .form-control,
+.admin_add_and_edit .form-select {
+    border-color: #E38B2A;
+}
+
+.admin_add_and_edit .form-control:focus,
+.admin_add_and_edit .form-select:focus {
+    border-color: #E38B2A;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #E38B2A;
+}
+
+.admin_add_and_edit .form-control:valid,
+.admin_add_and_edit .form-select:valid {
+    background-color: #FDEEDC !important;
+}
+
+.admin_add_and_edit .input-group-text {
+    border-color: #ffe3c1;
+    background-color: #E38B2A !important;
+    color: #FFFBF5;
+}
+
+.admin_add_and_edit .form-select {
+    color: #E38B2A !important;
+}
+
+.admin_add_and_edit .btn-back,
+.admin_add_and_edit .btn-add {
+    color: #FFFBF5 !important;
+    --bs-btn-border-color: #E38B2A !important;
+    --bs-btn-bg: #E38B2A !important;
+    --bs-btn-hover-bg: #9c5911 !important;
+    --bs-btn-hover-border-color: #9c5911 !important;
+    border-radius: 0 !important;
+}
+
+
+.admin_add_and_edit .custom-file-button input[type=file] {
+    margin-left: -2px !important;
+}
+
+.admin_add_and_edit .custom-file-button input[type=file]::-webkit-file-upload-button {
+    display: none;
+
+}
+
+.admin_add_and_edit .custom-file-button input[type=file]::file-selector-button {
+    display: none;
+}
+
+.admin_add_and_edit .custom-file-button:hover .input-group-file {
+    background-color: #9c5911 !important;
+    cursor: pointer;
+}
+
+.admin_add_and_edit input:-webkit-autofill,
+.admin_add_and_edit input:focus:-webkit-autofill,
+.admin_add_and_edit input:hover :-webkit-autofill {
+    -webkit-text-fill-color: #E38B2A !important;
+    -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
+}
+
+/* End of add and edit product admin */

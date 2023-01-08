@@ -1,0 +1,21 @@
+/* Navbar */
+
+.navb .navbar,
+.navb .dropdown-menu {
+    background-color: #FFFBF5 !important;
+    border-radius: 0 !important;
+}
+
+.navb .nav-link,
+.navb .fas,
+.navb .far,
+.navb .dropdown-item {
+    color: #E38B2A;
+}
+
+.navb .nav-link:hover,
+.navb .fas:hover {
+    color: #9c5911;
+}
+
+/* End of Navbar */

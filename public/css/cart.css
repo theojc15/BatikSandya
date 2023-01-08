@@ -1,0 +1,20 @@
+/* Cart */
+
+.cart .btn-quantity,
+.cart .form-control {
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    border-color: #E38B2A !important;
+}
+
+.cart .btn-delete {
+    color: #FF0000 !important;
+    border-color: #FF0000 !important;
+}
+
+.cart .btn-delete:hover {
+    color: #FFFBF5 !important;
+    background-color: #FF0000 !important;
+}
+
+/* End of cart */

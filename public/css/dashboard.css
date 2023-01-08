@@ -1,0 +1,206 @@
+/* dashboard */
+.dashboard form,
+.detail form,
+.category form {
+    display: flex;
+    align-items: center;
+    border: 2px #E38B2A solid;
+    border-radius: 15px;
+}
+
+.dashboard input[type="text"],
+.detail input[type="text"],
+.category input[type="text"] {
+    color: #E38B2A;
+    padding: 0.5em;
+    border: none;
+    outline: none;
+    flex: 1;
+    background-color: #FDEEDC;
+    border-radius: 15px 0 0 15px;
+    padding-left: 1.5vw;
+}
+
+.dashboard input[type="text"]::placeholder,
+.detail input[type="text"]::placeholder,
+.category input[type="text"]::placeholder {
+    color: #E38B2A;
+}
+
+.dashboard .search-btn,
+.detail .search-btn,
+.category .search-btn {
+    padding: 0.5em;
+    padding-right: 1.5vw;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #E38B2A;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #FDEEDC;
+    border-radius: 0px 15px 15px 0px;
+}
+
+.dashboard button:hover,
+.detail button:hover,
+.category button:hover {
+    color: #111;
+}
+
+.dashboard .fa,
+.detail .fa,
+.category .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.dashboard .card-container .row,
+.detail .card-container .row,
+.category .card-container .row,
+.inbox .card-container .row {
+    margin: 0 !important;
+}
+
+.dashboard .card,
+.detail .card,
+.category .card {
+    border-radius: 0;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.dashboard .card-link,
+.detail .card-link,
+.category .card-link {
+    text-decoration: none;
+    color: #E38B2A;
+}
+
+.dashboard .card-img-top,
+.detail .card-img-top,
+.category .card-img-top {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.dashboard .container-title,
+.detail .container-title,
+.category .container-title {
+    background-color: #E38B2A;
+    height: 7vh;
+}
+
+.dashboard .container-title h5,
+.detail .container-title h5,
+.category .container-title h5 {
+    margin: 0;
+    font-size: 2em;
+    color: #FDEEDC;
+    width: auto !important;
+}
+
+.inbox .container-title {
+    background-color: #FFD8A9;
+    height: 10vh;
+}
+
+.inbox .container-title h5 {
+    margin: 0;
+    font-size: 1.75em;
+    color: #E38B2A;
+    width: auto !important;
+}
+
+.dashboard .container-title a,
+.detail .container-title a,
+.category .container-title a,
+.inbox .container-title a {
+    text-decoration: none;
+    color: #FDEEDC;
+    font-size: 1em;
+    width: auto;
+}
+
+.dashboard .view-all,
+.detail .view-all,
+.category .view-all {
+    width: 80%;
+}
+
+.dashboard .container-body,
+.detail .container-body {
+    background-color: #FFFBF5;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    padding: 5vh 0 5vh 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.inbox .container-body {
+    background-color: #FDEEDC;
+    padding: 30px;
+    color: #E38B2A;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 1vh;
+}
+
+.dashboard .container-body-detail,
+.detail .container-body-detail,
+.category .container-body-detail {
+    background-color: white;
+    flex-wrap: wrap;
+    padding: 1.5vh 0 1.5vh 0;
+}
+
+.dashboard .container-body .col,
+.detail .container-body .col,
+.category .container-body .col {
+    margin-top: 0 !important;
+}
+
+.dashboard .container-body::-webkit-scrollbar,
+.detail .container-body::-webkit-scrollbar {
+    height: 1vh;
+}
+
+.dashboard .container-body::-webkit-scrollbar-track,
+.detail .container-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dashboard .container-body::-webkit-scrollbar-thumb,
+.detail .container-body::-webkit-scrollbar-thumb {
+    background: #E38B2A;
+}
+
+.dashboard .container-body::-webkit-scrollbar-thumb:hover,
+.detail .container-body::-webkit-scrollbar-thumb:hover {
+    background: #db7b13;
+}
+
+.dashboard .add-cart-btn,
+.detail .add-cart-btn,
+.category .add-cart-btn {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: none;
+    background-color: #E38B2A;
+    color: #FDEEDC;
+}
+
+.dashboard .add-cart-btn i,
+.detail .add-cart-btn i,
+.category .add-cart-btn i {
+    margin: 0 0.5vw 0 1vw;
+}
+
+/* end dashboard */

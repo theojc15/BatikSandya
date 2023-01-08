@@ -10,7 +10,19 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
     <link href="/css/all.css" rel="stylesheet">
+    <link href="/css/adminAddEdit.css" rel="stylesheet">
+    <link href="/css/adminDashboard.css" rel="stylesheet">
+    <link href="/css/cart.css" rel="stylesheet">
+    <link href="/css/category.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <link href="/css/detail.css" rel="stylesheet">
+    <link href="/css/forgetPassword.css" rel="stylesheet">
+    <link href="/css/loginRegister.css" rel="stylesheet">
+    <link href="/css/navbar.css" rel="stylesheet">
+    <link href="/css/profile.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="sweetalert2.min.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>

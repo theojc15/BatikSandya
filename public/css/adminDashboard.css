@@ -1,0 +1,64 @@
+/* dashboard admin */
+
+.admin_dashboard .search-button {
+    background-color: #FDEEDC !important;
+    border: 2px solid #E38B2A !important;
+    border-radius: 0.9rem 0rem 0rem .9rem !important;
+}
+
+.admin_dashboard input[type="search"]::placeholder {
+    color: #E38B2A;
+}
+
+.admin_dashboard .btn-search {
+    color: #FFFBF5 !important;
+    --bs-btn-border-color: #E38B2A !important;
+    --bs-btn-bg: #E38B2A !important;
+    --bs-btn-hover-bg: #9c5911 !important;
+    --bs-btn-hover-border-color: #9c5911 !important;
+}
+
+.admin_dashboard .search-button:focus {
+    border-color: #E38B2A;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #E38B2A;
+}
+
+.admin_dashboard .btn-add {
+    color: #FFFBF5 !important;
+    --bs-btn-border-color: #E38B2A !important;
+    --bs-btn-bg: #E38B2A !important;
+    --bs-btn-hover-bg: #9c5911 !important;
+    --bs-btn-hover-border-color: #9c5911 !important;
+}
+
+.admin_dashboard .btn-edit {
+    color: #8D00FC !important;
+    border-color: #8D00FC !important;
+}
+
+.admin_dashboard .btn-edit:hover {
+    color: #FFFBF5 !important;
+    background-color: #8D00FC !important;
+}
+
+.admin_dashboard .btn-delete {
+    color: #FF0000 !important;
+    border-color: #FF0000 !important;
+}
+
+.admin_dashboard .btn-delete:hover {
+    color: #FFFBF5 !important;
+    background-color: #FF0000 !important;
+}
+
+.admin_dashboard .card-parent {
+    background-color: #FFFBF5 !important;
+    --bs-card-border-color: none !important;
+}
+
+.admin_dashboard .card {
+    --bs-card-border-radius: 0rem !important;
+}
+
+
+/* end dashboard admin */
