@@ -28,8 +28,8 @@
                         <p style="margin: 0;">Stok {{ $product->stok }}</p>
                     </div>
                     <div class="logo-container mb-3 d-flex justify-content-center">
-                        <a href=""><img src="{{ url('/image/tokopedia.png') }}" alt="..."></a>
-                        <a href=""><img src="{{ url('/image/shopee.png') }}" alt="..."></a>
+                        <a href="{{$product->tokopedia_link}}"><img src="{{ asset('/image/tokopedia.png') }}" alt="..."></a>
+                        <a href="{{$product->shopee_link}}"><img src="{{ asset('/image/shopee.png') }}" alt="..."></a>
                     </div>
                     <div class="detail-add-cart d-flex justify-content-center">
                         <button>
