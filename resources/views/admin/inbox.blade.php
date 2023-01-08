@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title', 'category')
+@section('title', 'inbox')
 
 @section('content')
     <section class="inbox">
@@ -12,12 +12,28 @@
                         <h5>Transaction Date</h5>
                     </div>
                     <div class="col d-flex justify-content-end" style="padding-right: 30px;">
-                        <a href="" style="text-decoration: none; width:auto;">
-                            <button type="button" class="btn btn-delete btn-outline-danger rounded-circle"
-                                style="width: 42px; height: 42px">
-                                <i class="fas fa-solid fa-trash"></i>
-                            </button>
-                        </a>
+                        <button type="button" class="btn btn-delete btn-outline-danger rounded-circle"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"
+                            style="width: 42px; height: 42px">
+                            <i class="fas fa-solid fa-trash"></i>
+                        </button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content" style="color:#E38B2A; background-color:#FDEEDC; border:none;">
+                                    <div class="modal-body">
+                                        <div class="mb-3 text-center mt-3">
+                                            <h3>Are You Sure You Want to Delete This Product?</h3>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer justify-content-center" style="border-top:none;">
+                                        <button type="button" class="btn btn-danger w-25"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-success w-25">Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row container-body">
