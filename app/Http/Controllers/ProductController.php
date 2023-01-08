@@ -129,6 +129,12 @@ class ProductController extends Controller
         return redirect('/manage');
     }
 
+    public function delete(Product $product) {
+        $product->delete();
+        return redirect('/manage');
+
+    }
+
     public function inbox()
     {
         $categories = Category::all();

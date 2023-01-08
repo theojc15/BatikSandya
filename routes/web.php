@@ -39,6 +39,7 @@ Route::get('/add', [ProductController::class, 'addProductView']);
 Route::post('/add', [\App\Http\Controllers\ProductController::class, 'addProduct']);
 Route::get('/edit/{product}', [ProductController::class, 'editProductView']);
 Route::post('/edit/{product}', [ProductController::class, 'editProduct']);
+Route::get('/delete/{product}', [ProductController::class, 'delete']);
 
 // User
 Route::get('/cart', [ProductController::class, 'cart']);
