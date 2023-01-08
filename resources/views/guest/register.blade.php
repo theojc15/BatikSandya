@@ -8,25 +8,25 @@
     <div class="container-fluid pt-3">
         <div class="row justify-content-center">
             <div class="col-md-7">
-                <h2 class="header-form orange card-header">REGISTER</h4>
+                <h2 class="header-form orange card-header">REGISTER</h2>
                 <div class="card-body">
                     <form method="POST" action="/register">
                         @csrf
                         <div class="row align-items-center g-3 pt-3">
                             <div class="col">
                                 <label class="label-form orange mb-2" for="name">Name</label>
-                                <input name="name" type="text" class="form-control" id="name" value="{{ old('name') }}">
+                                <input name="name" type="text" class="orange form-control" id="name" value="{{ old('name') }}">
                             </div>
                             <div class="col">
                                 <label class="label-form orange mb-2" for="username">Username</label>
-                                <input name="username" type="text" class="form-control" id="username" value="{{ old('username') }}">
+                                <input name="username" type="text" class="orange form-control" id="username" value="{{ old('username') }}">
                             </div>
                         </div>
 
                         <div class="row align-items-center g-3 pt-3">
                             <div class="col">
                                 <label class="label-form orange mb-2" for="email">Email</label>
-                                <input name="email" type="text" class="form-control" id="email" value="{{ old('email') }}">
+                                <input name="email" type="text" class="orange form-control" id="email" value="{{ old('email') }}">
                             </div>
                             <div class="col">
                                 <label class="label-form orange mb-2" for="phone">Phone Number</label>
@@ -34,7 +34,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-phone input-group-text">+62</span>
                                     </div>
-                                    <input name="phone" type="text" class="form-control" id="phone" value="{{ old('phone') }}" >
+                                    <input name="phone" type="text" class="orange form-control" id="phone" value="{{ old('phone') }}" >
                                 </div>
                             </div>
                         </div>
@@ -43,13 +43,13 @@
                             <div class="col">
                                 <label class="label-form orange mb-2" for="password">Password</label>
                                 <div class="input-group">
-                                    <input name="password" class="form-control" id="id_password">
+                                    <input name="password" class="orange form-control" id="id_password">
                                         <span class="input-group-icon input-group-text"><i class="far fa-eye" id="togglePassword"></i> </span>
                                 </div>
                             </div>
                             <div class="col">
                                 <label class="label-form orange mb-2" for="dob">Date of Birth</label>
-                                <input name="date_of_birth" type="date" class="form-control" id="dob" value="{{old('date_of_birth')}}" placeholder="">
+                                <input name="date_of_birth" type="date" class="orange form-control" id="dob" value="{{old('date_of_birth')}}" placeholder="">
                             </div>
                         </div>
 
@@ -57,7 +57,7 @@
                             <div class="col">
                                 <label class="label-form orange mb-2" for="conf-password">Confirm Password</label>
                                 <div class="input-group">
-                                    <input name="confpassword" class="form-control" id="conf_password">
+                                    <input name="confpassword" class="orange form-control" id="conf_password">
                                         <span class="input-group-icon input-group-text"><i class="far fa-eye" id="toggleconfPassword"></i> </span>
                                 </div>
                             </div>

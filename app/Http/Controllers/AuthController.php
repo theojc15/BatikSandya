@@ -17,10 +17,12 @@ class AuthController extends Controller
 
         return view ('guest.register', ['categories'=>$categories]);
     }
+
     public function login () {
         $categories = Category::all();
         return view ('guest.login', ['categories'=>$categories]);
     }
+
     public function registercheck(Request $request) {
         $validate = $request->validate([
             'name' => 'required|string|min:5',
@@ -92,5 +94,15 @@ class AuthController extends Controller
         Auth::logout();
 
         return redirect('login');
+    }
+
+    public function forgetPasswordEmail () {
+        $categories = Category::all();
+        return view ('user.forgetPasswordInitial', ['categories'=>$categories]);
+    }
+
+    public function forgetPassword () {
+        $categories = Category::all();
+        return view ('user.forgetPassword', ['categories'=>$categories]);
     }
 }

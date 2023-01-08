@@ -33,6 +33,8 @@ Route::post('/login', [AuthController::class, 'logincheck']);
 Route::get('/profile', [ProductController::class, 'profile']);
 Route::get('/edit-profile', [ProductController::class, 'editProfile']);
 Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/forget-password-initial', [AuthController::class, 'forgetPasswordEmail']);
+Route::get('/forget-password', [AuthController::class, 'forgetPassword']);
 
 // Admin
 Route::get('/manage', [ProductController::class, 'adminProduct']);

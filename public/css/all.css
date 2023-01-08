@@ -586,16 +586,19 @@ img {
     margin-left: -2px !important;
 }
 
-.admin_add_and_edit .custom-file-button .admin_add_and_edit input[type=file]::-webkit-file-upload-button {
+.admin_add_and_edit .custom-file-button, 
+.admin_add_and_edit input[type=file]::-webkit-file-upload-button {
     display: none;
 
 }
 
-.admin_add_and_edit .custom-file-button .admin_add_and_edit input[type=file]::file-selector-button {
+.admin_add_and_edit .custom-file-button, 
+.admin_add_and_edit input[type=file]::file-selector-button {
     display: none;
 }
 
-.admin_add_and_edit .custom-file-button:hover .admin_add_and_edit .input-group-file {
+.admin_add_and_edit .custom-file-button:hover,
+.admin_add_and_edit .input-group-file {
     background-color: #9c5911 !important;
     cursor: pointer;
 }
@@ -629,3 +632,60 @@ img {
 }
 
 /* End of cart */
+
+/* Forget password */
+
+.forget_password .card {
+    --bs-card-bg: none !important;
+    --bs-card-border-width: 0px !important;
+}
+
+.forget_password .card-header {
+    background-color: transparent !important;
+}
+
+.forget_password .link-hover-register:hover {
+    color: #9c5911 !important;
+}
+
+.forget_password .form-control {
+    border-color: #E38B2A;
+    background-color: #FDEEDC !important;
+}
+
+.forget_password .form-control:focus {
+    border-color: #E38B2A;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #E38B2A;
+}
+
+.forget_password .form-control:valid {
+    background-color: #FDEEDC !important;
+}
+
+.forget_password .form-control {
+    border-radius: 0;
+}
+
+.forget_password .btn {
+    border-color: transparent;
+    background-color: #E38B2A;
+    border-radius: 0;
+}
+
+.forget_password .btn:hover {
+    background-color: #9c5911;
+}
+
+.forget_password .input-group-icon {
+    border-color: #ffe3c1;
+    background-color: #E38B2A !important;
+    color: #FFFBF5;
+}
+
+.forget_password input:-webkit-autofill,
+.forget_password input:focus:-webkit-autofill,
+.forget_password input:hover :-webkit-autofill {
+    -webkit-text-fill-color: #E38B2A !important;
+    -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
+}
+/* End of forget password */
