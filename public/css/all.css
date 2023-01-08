@@ -586,16 +586,16 @@ img {
     margin-left: -2px !important;
 }
 
-.admin_add_and_edit .custom-file-button .admin_add_and_edit input[type=file]::-webkit-file-upload-button {
+.admin_add_and_edit .custom-file-button input[type=file]::-webkit-file-upload-button {
     display: none;
 
 }
 
-.admin_add_and_edit .custom-file-button .admin_add_and_edit input[type=file]::file-selector-button {
+.admin_add_and_edit .custom-file-button input[type=file]::file-selector-button {
     display: none;
 }
 
-.admin_add_and_edit .custom-file-button:hover .admin_add_and_edit .input-group-file {
+.admin_add_and_edit .custom-file-button:hover .input-group-file {
     background-color: #9c5911 !important;
     cursor: pointer;
 }

@@ -20,7 +20,9 @@ class ProductSeeder extends Seeder
             'detail'=>'Lanyard bermotif misc',
             'price'=>20000,
             'photo'=>'Lanyard - Misc.png',
-            'stok'=>0
+            'stok'=>0,
+            'tokopedia_link'=>'https://www.tokopedia.com/',
+            'shopee_link'=>'https://shopee.co.id/'
         ]);
 
         DB::table('products')->insert([
@@ -29,7 +31,9 @@ class ProductSeeder extends Seeder
             'detail'=>'Lanyard bermotif Yogyakarta - Kawung',
             'price'=>20000,
             'photo'=>'Lanyard - Yogyakarta - Kawung.png',
-            'stok'=>0
+            'stok'=>0,
+            'tokopedia_link'=>'https://www.tokopedia.com/',
+            'shopee_link'=>'https://shopee.co.id/'
         ]);
 
         DB::table('products')->insert([
@@ -38,7 +42,9 @@ class ProductSeeder extends Seeder
             'detail'=>'Lanyard bermotif Pekalongan - Terang Bulan',
             'price'=>20000,
             'photo'=>'Lanyard - Pekalongan - Terang Bulan.png',
-            'stok'=>0
+            'stok'=>0,
+            'tokopedia_link'=>'https://www.tokopedia.com/',
+            'shopee_link'=>'https://shopee.co.id/'
         ]);
     }
 }

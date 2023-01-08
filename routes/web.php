@@ -19,9 +19,6 @@ use App\Http\Controllers\ProductController;
 Route::get('/viewall/{name}', [ProductController::class, 'viewcategory']);
 Route::get('/detail/{id}', [ProductController::class, 'detail']);
 Route::get('/', [ProductController::class, 'homeProduct']);
-Route::get('/dashboard', function () {
-    return view('all.dashboard');
-});
 
 // Guest
 Route::get('/register', [AuthController::class, 'register']);
@@ -36,7 +33,8 @@ Route::get('/logout', [AuthController::class, 'logout']);
 
 // Admin
 Route::get('/manage', [ProductController::class, 'adminProduct']);
-Route::get('/add', [ProductController::class, 'addProduct']);
+Route::get('/add', [ProductController::class, 'addProductView']);
+Route::post('/add', [\App\Http\Controllers\ProductController::class, 'addProduct']);
 Route::get('/edit', [ProductController::class, 'editProduct']);
 
 // User

@@ -14,7 +14,7 @@
                     <button type="button" class="btn btn-back btn-secondary">
                         <i style="color:white" class="fas fa-arrow-circle-left"></i> Back
                     </button>
-                </a>    
+                </a>
                 <div style="position: absolute; left:50%; transform:translate(-50%);">
                     <h2 class="orange">Add Product</h2>
                 </div>
@@ -22,15 +22,15 @@
 
         </div>
 
-        
+
         <div class="card-body">
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="/add" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group mb-3">
                     <div class="mb-3">
                         <label for="name" class="orange form-label">Product Name</label>
-                        <input value="" type="text" class="orange form-control" id="name" name="name">
+                        <input value="{{ old('name') }}" type="text" class="orange form-control" id="name" name="name">
                     </div>
                 </div>
 
@@ -56,39 +56,45 @@
 
                 <div class="form-group mb-3">
                     <label for="price" class="orange form-label">Price</label>
-                    <div class="input-group mb-3">  
+                    <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">IDR</span>
                         </div>
-                        <input value="" type="text" class="orange form-control" id="price" name="price">
+                        <input value="{{ old('price') }}" type="text" class="orange form-control" id="price" name="price">
                     </div>
                 </div>
 
                 <div class="form-group mb-3">
                     <div class="mb-3">
                         <label for="name" class="orange form-label">Stock</label>
-                        <input value="" type="text" class="orange form-control" id="stock" name="stock">
+                        <input value="{{ old('stock') }}" type="text" class="orange form-control" id="stock" name="stock">
                     </div>
                 </div>
 
                 <div class="form-group mb-3">
                     <div class="mb-3">
                         <label for="name" class="orange form-label">Tokopedia Link</label>
-                        <input value="" type="text" class="orange form-control" id="link_tokopedia" name="link_tokopedia">
+                        <input value="{{ old('link_tokopedia') }}" type="text" class="orange form-control" id="link_tokopedia" name="link_tokopedia">
                     </div>
                 </div>
 
-                <div class="form-group mb-3">
+                <div class="form-group mb-4">
                     <div class="mb-3">
                         <label for="name" class="orange form-label">Shopee Link</label>
-                        <input value="" type="text" class="orange form-control" id="link_shopee" name="link_shopee">
+                        <input value="{{ old('link_shopee') }}" type="text" class="orange form-control" id="link_shopee" name="link_shopee">
                     </div>
                 </div>
 
-                <div class="input-group custom-file-button">
+                <div class="input-group custom-file-button mb-3">
                     <label class="input-group-text input-group-file" for="inputGroupFile">Choose a File</label>
-                    <input type="file" class="orange form-control" id="inputGroupFile">
+                    <input type="file" class="orange form-control" id="inputGroupFile" name="photo">
                 </div>
+
+                @if ($errors->any())
+                    <div class="alert alert-danger form-outline mb-4" role="alert">
+                        {{$errors->first()}}
+                    </div>
+                @endif
 
                 <div class="col-md-12 text-center pt-3">
                     <button type="submit" class="btn btn-add btn-outline-secondary justify-content-center">ADD</button>
