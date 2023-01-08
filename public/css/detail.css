@@ -75,3 +75,17 @@ img {
 }
 
 /* end detail */
+
+@media screen and (max-width: 991px) {
+    .product-info {
+        text-align: center;
+    }
+
+    .detail .product-info h1,
+    .detail .product-info h3,
+    .detail .product-info .quantity {
+        display: flex;
+        justify-content: center;
+        margin-left: 0 !important;
+    }
+}

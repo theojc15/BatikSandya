@@ -14,22 +14,24 @@
                 </div>
             </div>
             <div class="row mt-4" style="margin: auto; width: 95%;">
-                <div class="col-6 d-flex">
+                <div class="col-12 col-lg-6 d-flex">
                     <div class="detail-image-container">
-                        <img src="{{ asset('image/'.$product->photo) }}" alt="...">
+                        <img src="{{ asset('image/' . $product->photo) }}" alt="...">
                     </div>
                 </div>
-                <div class="col-6 product-info">
-                    <h1>{{$product->name}}</h1>
-                    <h3 class="mt-4 mb-5">Rp. {{$product->price}}</h3>
-                    <div class="quantity mb-5 d-flex align-items-center">
+                <div class="col-12 col-lg-6 product-info">
+                    <h1>{{ $product->name }}</h1>
+                    <h3 class="mt-4 mb-5">Rp. {{ $product->price }}</h3>
+                    <div class="quantity mb-5 d-md-flex align-items-center">
                         <label for="kuantitas">Kuantitas:</label>
                         <input type="number" id="kuantitas">
                         <p style="margin: 0;">Stok {{ $product->stok }}</p>
                     </div>
                     <div class="logo-container mb-3 d-flex justify-content-center">
-                        <a href="{{$product->tokopedia_link}}"><img src="{{ asset('/image/tokopedia.png') }}" alt="..."></a>
-                        <a href="{{$product->shopee_link}}"><img src="{{ asset('/image/shopee.png') }}" alt="..."></a>
+                        <a href="{{ $product->tokopedia_link }}"><img src="{{ asset('/image/tokopedia.png') }}"
+                                alt="..."></a>
+                        <a href="{{ $product->shopee_link }}"><img src="{{ asset('/image/shopee.png') }}"
+                                alt="..."></a>
                     </div>
                     <div class="detail-add-cart d-flex justify-content-center">
                         <button>
@@ -72,7 +74,8 @@
                         <div class="col">
                             <a class="card-link" href="/detail/{{ $prdct->id }}">
                                 <div class="card h-100">
-                                    <img src="{{ asset('image/'.$prdct->photo) }}" class="img-fluid card-img-top" alt="...">
+                                    <img src="{{ asset('image/' . $prdct->photo) }}" class="img-fluid card-img-top"
+                                        alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $prdct->name }}</h5>
                                         <p class="card-text">Rp. {{ $prdct->price }}</p>
