@@ -35,7 +35,8 @@ Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/manage', [ProductController::class, 'adminProduct']);
 Route::get('/add', [ProductController::class, 'addProductView']);
 Route::post('/add', [\App\Http\Controllers\ProductController::class, 'addProduct']);
-Route::get('/edit', [ProductController::class, 'editProduct']);
+Route::get('/edit/{product}', [ProductController::class, 'editProductView']);
+Route::post('/edit/{product}', [ProductController::class, 'editProduct']);
 
 // User
 Route::get('/cart', [ProductController::class, 'cart']);

@@ -90,7 +90,7 @@
                 </div>
                 <div class="card-body d-flex" style="flex-direction: column;">
                     <div class="row align-items-center h-100 justify-content-end pe-3">
-                        <a href="" style="text-decoration: none; width:auto">
+                        <a href="/edit/{{ $product->id }}" style="text-decoration: none; width:auto">
                             <button type="button" class="btn btn-edit btn-outline-primary rounded-circle" style="width: 42px; height: 42px">
                                 <i class="fas fa-sharp fa-solid fa-pen"></i>
                             </button>
