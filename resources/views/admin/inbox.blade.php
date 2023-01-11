@@ -12,8 +12,13 @@
                         <div class="col" style="padding-left: 30px;">
                             <h5>Transaction Date: {{ $transactionHeader->transaction_date }}</h5>
                         </div>
-                        <div class="col"><a href="/confirm/{{ $transactionHeader->id }}">DONE</a></div>
                         <div class="col d-flex justify-content-end" style="padding-right: 30px;">
+                            <a href="/confirm/{{ $transactionHeader->id }}" class="me-2">
+                                <button type="button" class="btn btn-delete btn-outline-success rounded-circle"
+                                    style="width: 42px; height: 42px">
+                                    <i class="fas fa-solid fa-check"></i>
+                                </button>
+                            </a>
                             <button type="button" class="btn btn-delete btn-outline-danger rounded-circle"
                                 data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"
                                 style="width: 42px; height: 42px">
