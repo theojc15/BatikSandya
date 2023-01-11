@@ -22,7 +22,8 @@
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content" style="color:#E38B2A; background-color:#FDEEDC; border:none;">
+                                    <div class="modal-content"
+                                        style="color:#E38B2A; background-color:#FDEEDC; border:none;">
                                         <div class="modal-body">
                                             <div class="mb-3 text-center mt-3">
                                                 <h3>Are You Sure You Want to Delete This Product?</h3>
@@ -72,40 +73,24 @@
                                 <div class="row">
                                     <div class="col-3 d-flex justify-content-center align-items-center">
                                         <div class="inbox-image-container">
-                                            <img src="{{ asset('/image/'.$transactionDetail->product->photo) }}" alt="...">
+                                            <img src="{{ asset('/image/' . $transactionDetail->product->photo) }}"
+                                                alt="...">
                                         </div>
                                     </div>
-                                    <div class="col-9 d-flex align-items-center">
-                                        <table style="width: 60%;">
-                                            <tr style="width: 70%;">
-                                                <td style="font-weight: bold;">
-                                                    Product Name
-                                                </td>
-                                                <td>
-                                                    {{ $transactionDetail->product->name }}
-                                                </td>
-                                            </tr>
-                                            <tr style="width: 70%;">
-                                                <td style="font-weight: bold;">
-                                                    Quantity
-                                                </td>
-                                                <td>
-                                                    {{ $transactionDetail->quantity }}
-                                                </td>
-                                            </tr>
-                                            <tr style="width: 70%;">
-                                                <td style="font-weight: bold;">
-                                                    Sub Total
-                                                </td>
-                                                <td>
-                                                    Rp {{ $transactionDetail->quantity * $transactionDetail->product->price }}
-                                                </td>
-                                            </tr>
-                                        </table>
+                                    <div class="col-3 d-flex flex-column align-items-start justify-content-center ms-3">
+                                        <h5 style="font-size: 1em; font-weight:bold">Product Name</h5>
+                                        <h5 style="font-size: 1em; font-weight:bold">Quantity</h5>
+                                        <h5 style="font-size: 1em; font-weight:bold; margin-right: auto;">Sub Total</h5>
+                                    </div>
+                                    <div class="col-4 d-flex flex-column align-items-start justify-content-center">
+                                        <h5 style="font-size: 1em; font-weight:400">{{ $transactionDetail->product->name }}
+                                        </h5>
+                                        <h5 style="font-size: 1em; font-weight:400">{{ $transactionDetail->quantity }}</h5>
+                                        <h5 style="font-size: 1em; font-weight:400; margin-right: auto;">Rp
+                                            {{ $transactionDetail->quantity * $transactionDetail->product->price }}</h5>
                                     </div>
                                 </div>
                             </div>
-
                         @endforeach
 
                     </div>
