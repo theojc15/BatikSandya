@@ -19,6 +19,7 @@
     <link href="/css/dashboard.css" rel="stylesheet">
     <link href="/css/detail.css" rel="stylesheet">
     <link href="/css/forgetPassword.css" rel="stylesheet">
+    <link href="/css/history.css" rel="stylesheet">
     <link href="/css/loginRegister.css" rel="stylesheet">
     <link href="/css/navbar.css" rel="stylesheet">
     <link href="/css/profile.css" rel="stylesheet">
