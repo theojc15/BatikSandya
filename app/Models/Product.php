@@ -19,4 +19,8 @@ class Product extends Model
         return $this->belongsToMany(User::class, 'carts');
     }
 
+    public function transactiondetail() {
+        return $this->hasMany(TransactionDetail::class);
+    }
+
 }

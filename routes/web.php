@@ -51,4 +51,5 @@ Route::post('/addcart/{product}', [TransactionController::class, 'addCart']);
 Route::get('/deletecart/{cart}', [TransactionController::class, 'erase']);
 Route::get('/purchase', [TransactionController::class, 'purchase']);
 
-Route::get('/inbox', [ProductController::class, 'inbox']);
+Route::get('/inbox', [TransactionController::class, 'inbox']);
+Route::get('/confirm/{transactionHeader}', [TransactionController::class, 'confirm']);

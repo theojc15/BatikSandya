@@ -135,13 +135,6 @@ class ProductController extends Controller
 
     }
 
-    public function inbox()
-    {
-        $categories = Category::all();
-
-        return view('admin.inbox', ['categories' => $categories]);
-    }
-
     public function profile()
     {
         $categories = Category::all();
