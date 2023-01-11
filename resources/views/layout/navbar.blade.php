@@ -35,20 +35,26 @@
                 </ul>
 
                 <ul class="navbar-nav right-nav">
-                    <div class="icon-button d-flex align-items-center" style="margin: 0 1vw">
-                        <li class="nav-item">
-                            <a href="#">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </li>
-                    </div>
-                    <div class="icon-button d-flex align-items-center" style="margin: 0 1vw">
-                        <li class="nav-item">
-                            <a href="/cart">
-                                <i class="fas fa-shopping-bag"></i>
-                            </a>
-                        </li>
-                    </div>
+                    @if (Auth::check())
+                        @if (Auth::user()->role == 'Admin')
+                            <div class="icon-button d-flex align-items-center" style="margin: 0 1vw">
+                                <li class="nav-item">
+                                    <a href="/inbox ">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </li>
+                            </div>
+                        @else
+                            <div class="icon-button d-flex align-items-center" style="margin: 0 1vw">
+                                <li class="nav-item">
+                                    <a href="/cart">
+                                        <i class="fas fa-shopping-bag"></i>
+                                    </a>
+                                </li>
+                            </div>
+                        @endif
+                    @endif
+
                     @if (Auth::check())
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

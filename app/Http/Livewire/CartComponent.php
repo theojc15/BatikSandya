@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use \App\Models\Cart;
 use App\Models\Category;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -13,14 +14,19 @@ class CartComponent extends Component
     public function increase($rowId)
     {
         $cart = Cart::find($rowId);
-        $cart->qty += 1;
-        $cart->save();
+        $product = Product::find($cart->product_id);
+        if($cart->qty < $product->stok) {
+            $cart->qty += 1;
+            $cart->save();
+        }
     }
     public function decrease($rowId)
     {
         $cart = Cart::find($rowId);
-        $cart->qty -= 1;
-        $cart->save();
+        if ($cart->qty > 1) {
+            $cart->qty -= 1;
+            $cart->save();
+        }
     }
     public function render()
     {

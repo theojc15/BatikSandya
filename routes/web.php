@@ -49,5 +49,6 @@ Route::get('/history', [ProductController::class, 'history']);
 Route::get('/cart', CartComponent::class);
 Route::post('/addcart/{product}', [TransactionController::class, 'addCart']);
 Route::get('/deletecart/{cart}', [TransactionController::class, 'erase']);
+Route::get('/purchase', [TransactionController::class, 'purchase']);
 
 Route::get('/inbox', [ProductController::class, 'inbox']);
