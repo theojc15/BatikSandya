@@ -43,12 +43,14 @@ Route::post('/add', [ProductController::class, 'addProduct']);
 Route::get('/edit/{product}', [ProductController::class, 'editProductView']);
 Route::post('/edit/{product}', [ProductController::class, 'editProduct']);
 Route::get('/delete/{product}', [ProductController::class, 'delete']);
-Route::get('/history', [ProductController::class, 'history']);
+Route::get('/inbox', [TransactionController::class, 'inbox']);
+Route::get('/confirm/{transactionHeader}', [TransactionController::class, 'confirm']);
 
 // User
 Route::get('/cart', CartComponent::class);
 Route::post('/addcart/{product}', [TransactionController::class, 'addCart']);
 Route::get('/deletecart/{cart}', [TransactionController::class, 'erase']);
 Route::get('/purchase', [TransactionController::class, 'purchase']);
+Route::get('/history', [TransactionController::class, 'history']);
 
-Route::get('/inbox', [ProductController::class, 'inbox']);
+

@@ -135,13 +135,6 @@ class ProductController extends Controller
 
     }
 
-    public function inbox()
-    {
-        $categories = Category::all();
-
-        return view('admin.inbox', ['categories' => $categories]);
-    }
-
     public function profile()
     {
         $categories = Category::all();
@@ -156,10 +149,4 @@ class ProductController extends Controller
         return view('all.editProfile', ['categories' => $categories]);
     }
 
-    public function history()
-    {
-        $categories = Category::all();
-
-        return view('user.history', ['categories' => $categories]);
-    }
 }

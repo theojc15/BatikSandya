@@ -99,12 +99,34 @@ class TransactionController extends Controller
             $transactiondetail->save();
 
             $product->stok -= $cart->qty;
-            
+
             $product->save();
             $cart->delete();
 
         }
         \Illuminate\Support\Facades\Session::flash('message', 'Purchase Successful');
         return redirect('/');
+    }
+
+    public function inbox()
+    {
+        $categories = Category::all();
+        $transactionHeader = TransactionHeader::where('status', 'like', 'Not Done')->get();
+
+        return view('admin.inbox', ['categories' => $categories, 'transactionHeaders'=>$transactionHeader]);
+    }
+
+    public function confirm(TransactionHeader $transactionHeader) {
+        $transactionHeader->status = 'Done';
+        $transactionHeader->save();
+
+        return redirect('/inbox');
+    }
+
+    public function history() {
+        $categories = Category::all();
+        $transactions = TransactionHeader::where('user_id', 'like', Auth::user()->id)->get();
+
+        return view('user.history', ['categories'=>$categories, 'transactions'=>$transactions]);
     }
 }
