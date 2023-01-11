@@ -120,4 +120,47 @@ class AuthController extends Controller
 
         return view('all.editProfile', ['categories' => $categories]);
     }
+
+    public function changeProfile(User $user, Request $request)
+    {
+        $users = User::all();
+        $validate = $request->validate([
+            'name' => 'required|string|min:5',
+            'username' => 'required|string|min:5',
+            'email' => 'required|email:rfc,dns',
+            'date_of_birth' => 'required|date|after:01-01-1900|before:today',
+            'phone'=>'required|integer',
+            'address'=> 'required'
+        ]);
+
+        foreach($users as $us) {
+            if($user->id != $us->id) {
+                if($request->username == $us->username) {
+                    return redirect()->back()->withErrors('The username has already been taken.')
+                        ->withInput($request->only('name', 'email', 'date_of_birth', 'phone', 'address'));
+                }
+                if($request->email == $us->email) {
+                    return redirect()->back()->withErrors('The email has already been taken.')
+                        ->withInput($request->only('name', 'username', 'date_of_birth', 'phone', 'address'));
+                }
+            }
+        }
+
+
+
+        if($request->phone[0] == '+' or $request->phone[0] == '-') {
+            return redirect()->back()->withErrors('The phone must be an integer.')
+            ->withInput($request->only('name', 'username', 'email', 'date_of_birth', 'address'));
+        }
+
+        $user->name = $request->name;
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->phone = '+62'.$request->phone;
+        $user->DOB = $request->date_of_birth;
+        $user->address = $request->address;
+
+        $user->save();
+        return redirect('/profile');
+    }
 }

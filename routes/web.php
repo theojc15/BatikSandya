@@ -32,6 +32,7 @@ Route::post('/login', [AuthController::class, 'logincheck']);
 // Admin & User
 Route::get('/profile', [AuthController::class, 'profile']);
 Route::get('/edit-profile', [AuthController::class, 'editProfile']);
+Route::post('/edit-profile/{user}', [AuthController::class, 'changeProfile']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/forget-password-initial', [AuthController::class, 'forgetPasswordEmail']);
 Route::get('/forget-password', [AuthController::class, 'forgetPassword']);
