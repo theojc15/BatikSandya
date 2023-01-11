@@ -61,7 +61,7 @@
                                 aria-expanded="false">
                                 {{ Auth::user()->name }}
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" style="min-width: 100%">
                                 <li><a class="dropdown-item" href="{{ url('profile') }}">Profile</a></li>
                                 <li><a class="dropdown-item" href="{{ url('logout') }}">Logout</a></li>
                             </ul>
