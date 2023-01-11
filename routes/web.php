@@ -30,8 +30,8 @@ Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'logincheck']);
 
 // Admin & User
-Route::get('/profile', [ProductController::class, 'profile']);
-Route::get('/edit-profile', [ProductController::class, 'editProfile']);
+Route::get('/profile', [AuthController::class, 'profile']);
+Route::get('/edit-profile', [AuthController::class, 'editProfile']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/forget-password-initial', [AuthController::class, 'forgetPasswordEmail']);
 Route::get('/forget-password', [AuthController::class, 'forgetPassword']);

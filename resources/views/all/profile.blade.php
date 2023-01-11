@@ -62,7 +62,7 @@
 
                             </div>
                             <div class="edit-profile-btn d-flex justify-content-center mt-4">
-                                <button>EDIT</button>
+                                <a style="text-decoration: none;width: 35%" href="/edit-profile"><button style="width: 100%">EDIT</button></a>
                             </div>
                         </div>
                     </div>

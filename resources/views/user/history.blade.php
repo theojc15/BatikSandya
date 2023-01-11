@@ -1,11 +1,16 @@
 @extends('layout.layout')
 
 @section('title', 'history')
+
 @section('content')
 
     <section class="history">
         <div class="container manage-container mt-5" style="width: 80%;">
             @foreach ($transactions as $transaction)
+                @php
+                    $total = 0;
+                    $produk = 0;
+                @endphp
                 <div class="accordion accordion-container" id="accordionPanelsStayOpenExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="panelsStayOpen-heading">
@@ -31,54 +36,35 @@
                                         </th>
                                     </tr>
 
-                                    <tr>
-                                        <td style="width: 60%;">
-                                            PRODUCT NAME
-                                        </td>
-                                        <td>
-                                            PRODUCT QUANTITY
-                                        </td>
-                                        <td>
-                                            PRODUCT PRICE
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 60%;">
-                                            PRODUCT NAME
-                                        </td>
-                                        <td>
-                                            PRODUCT QUANTITY
-                                        </td>
-                                        <td>
-                                            PRODUCT PRICE
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 60%;">
-                                            PRODUCT NAME
-                                        </td>
-                                        <td>
-                                            PRODUCT QUANTITY
-                                        </td>
-                                        <td>
-                                            PRODUCT PRICE
-                                        </td>
-                                    </tr>
+                                    @foreach ($transaction->transactiondetail as $transactionDetail)
+                                        <tr>
+                                            <td style="width: 60%;">
+                                                {{ $transactionDetail->product->name }}
+                                            </td>
+                                            <td>
+                                                {{ $transactionDetail->quantity }}
+                                            </td>
+                                            <td>
+                                                {{ $transactionDetail->product->price * $transactionDetail->quantity }}
+                                            </td>
+                                        </tr>
+
+                                        @php
+                                            $total += $transactionDetail->product->price * $transactionDetail->quantity;
+                                            $produk += $transactionDetail->quantity;
+                                        @endphp
+                                    @endforeach
 
                                     <tr>
                                         <th>
                                             Total
                                         </th>
                                         <th>
-                                            TOTAL PRODUK
+                                            {{ $produk }}
                                         </th>
                                         <th>
-                                            TOTAL PRICE
+                                            {{ $total }}
                                         </th>
-                                    </tr>
-
-                                    <tr class="orange">
-                                        <th>Transaction Status DONE OPO ORA KALO KELAR IJO KALO GA KELAR</th>
                                     </tr>
                                 </table>
                             </div>

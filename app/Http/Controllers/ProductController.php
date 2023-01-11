@@ -135,18 +135,4 @@ class ProductController extends Controller
 
     }
 
-    public function profile()
-    {
-        $categories = Category::all();
-
-        return view('all.profile', ['categories' => $categories]);
-    }
-
-    public function editProfile()
-    {
-        $categories = Category::all();
-
-        return view('all.editProfile', ['categories' => $categories]);
-    }
-
 }

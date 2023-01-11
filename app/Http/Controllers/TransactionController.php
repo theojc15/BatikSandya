@@ -125,7 +125,8 @@ class TransactionController extends Controller
 
     public function history() {
         $categories = Category::all();
-        $transactions = TransactionHeader::where('user_id', 'like', Auth::user()->id)->get();
+        $transactions = TransactionHeader::where('user_id', 'like', Auth::user()->id)
+        ->where('status', 'like', 'Done')->get();
 
         return view('user.history', ['categories'=>$categories, 'transactions'=>$transactions]);
     }

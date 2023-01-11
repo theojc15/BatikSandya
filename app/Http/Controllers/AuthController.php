@@ -105,4 +105,19 @@ class AuthController extends Controller
         $categories = Category::all();
         return view ('user.forgetPassword', ['categories'=>$categories]);
     }
+
+
+    public function profile()
+    {
+        $categories = Category::all();
+
+        return view('all.profile', ['categories' => $categories]);
+    }
+
+    public function editProfile()
+    {
+        $categories = Category::all();
+
+        return view('all.editProfile', ['categories' => $categories]);
+    }
 }
