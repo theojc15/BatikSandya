@@ -26,10 +26,6 @@
                                 <li><a class="dropdown-item"
                                         href="/viewall/{{ $category->name }}">{{ $category->name }}</a></li>
                             @endforeach
-                            {{-- <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li> --}}
                         </ul>
                     </li>
                 </ul>
@@ -52,6 +48,10 @@
                                     </a>
                                 </li>
                             </div>
+
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/history">History</a>
+                            </li>
                         @endif
                     @endif
 

@@ -76,8 +76,8 @@
                                     </th>
                                 </tr>
 
-                                <tr>
-                                    <th>Transaction Status DONE OPO ORA</th>
+                                <tr class="orange">
+                                    <th>Transaction Status DONE OPO ORA KALO KELAR IJO KALO GA KELAR</th>
                                 </tr>
                             </table>
                         </div>
