@@ -20,24 +20,32 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 product-info">
-                    <h1>{{ $product->name }}</h1>
-                    <h3 class="mt-4 mb-5">Rp. {{ $product->price }}</h3>
-                    <div class="quantity mb-5 d-md-flex align-items-center">
-                        <label for="kuantitas">Kuantitas:</label>
-                        <input type="number" id="kuantitas">
-                        <p style="margin: 0;">Stok {{ $product->stok }}</p>
-                    </div>
-                    <div class="logo-container mb-3 d-flex justify-content-center">
-                        <a href="{{ $product->tokopedia_link }}"><img src="{{ asset('/image/tokopedia.png') }}"
-                                alt="..."></a>
-                        <a href="{{ $product->shopee_link }}"><img src="{{ asset('/image/shopee.png') }}"
-                                alt="..."></a>
-                    </div>
-                    <div class="detail-add-cart d-flex justify-content-center">
-                        <button>
-                            <i class="fas fa-plus"></i>Add to cart
-                        </button>
-                    </div>
+                    <form style="all: unset !important" method="POST" action="/addcart/{{ $product->id }}">
+                        @csrf
+                        <h1>{{ $product->name }}</h1>
+                        <h3 class="mt-4 mb-5">Rp. {{ $product->price }}</h3>
+                        <div class="quantity mb-5 d-md-flex align-items-center">
+                            <label for="kuantitas">Kuantitas:</label>
+                            <input type="number" id="kuantitas" name="quantity">
+                            <p style="margin: 0;">Stok {{ $product->stok }}</p>
+                        </div>
+                        <div class="logo-container mb-3 d-flex justify-content-center">
+                            <a href="{{ $product->tokopedia_link }}"><img src="{{ asset('/image/tokopedia.png') }}"
+                                    alt="..."></a>
+                            <a href="{{ $product->shopee_link }}"><img src="{{ asset('/image/shopee.png') }}"
+                                    alt="..."></a>
+                        </div>
+                        @if ($errors->any())
+                            <div class="alert alert-danger form-outline mb-4" role="alert">
+                                {{ $errors->first() }}
+                            </div>
+                        @endif
+                        <div class="detail-add-cart d-flex justify-content-center">
+                            <button type="submit">
+                                <i class="fas fa-plus"></i>Add to cart
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
 

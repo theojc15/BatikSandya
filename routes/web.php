@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Livewire\Cart;
+use App\Http\Livewire\CartComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +45,9 @@ Route::post('/edit/{product}', [ProductController::class, 'editProduct']);
 Route::get('/delete/{product}', [ProductController::class, 'delete']);
 
 // User
-Route::get('/cart', [TransactionController::class, 'cart']);
+Route::get('/cart', CartComponent::class);
+// Route::get('/cart', [TransactionController::class, 'viewCart']);
+Route::post('/addcart/{product}', [TransactionController::class, 'addCart']);
+Route::get('/deletecart/{cart}', [TransactionController::class, 'erase']);
 
 Route::get('/inbox', [ProductController::class, 'inbox']);

@@ -44,7 +44,7 @@
                     </div>
                     <div class="icon-button d-flex align-items-center" style="margin: 0 1vw">
                         <li class="nav-item">
-                            <a href="#">
+                            <a href="/cart">
                                 <i class="fas fa-shopping-bag"></i>
                             </a>
                         </li>
