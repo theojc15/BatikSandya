@@ -149,10 +149,4 @@ class ProductController extends Controller
         return view('all.editProfile', ['categories' => $categories]);
     }
 
-    public function history()
-    {
-        $categories = Category::all();
-
-        return view('user.history', ['categories' => $categories]);
-    }
 }
