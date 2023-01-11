@@ -17,4 +17,27 @@
     background-color: #FF0000 !important;
 }
 
+@media screen and (max-width: 991px) {
+    .cart img {
+        height: auto !important;
+    }
+
+    .input-group-header {
+        width: 100% !important;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cart .container {
+        width: 80% !important;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .input-group-header-2 {
+        width: 35% !important;
+    }
+}
+
 /* End of cart */

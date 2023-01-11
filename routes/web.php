@@ -46,7 +46,6 @@ Route::get('/delete/{product}', [ProductController::class, 'delete']);
 
 // User
 Route::get('/cart', CartComponent::class);
-// Route::get('/cart', [TransactionController::class, 'viewCart']);
 Route::post('/addcart/{product}', [TransactionController::class, 'addCart']);
 Route::get('/deletecart/{cart}', [TransactionController::class, 'erase']);
 

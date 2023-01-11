@@ -18,10 +18,11 @@ class TransactionController extends Controller
         $carts = Cart::where('user_id', 'like', Auth::user()->id)->get();
         // dd($carts);
 
-        return view('user.cart', ['categories' => $categories, 'carts'=>$carts, 'user'=>$user]);
+        return view('user.cart', ['categories' => $categories, 'carts' => $carts, 'user' => $user]);
     }
 
-    public function addCart(Request $request, Product $product) {
+    public function addCart(Request $request, Product $product)
+    {
         $stok = $product->stok;
 
         $validate = $request->validate([
@@ -42,7 +43,8 @@ class TransactionController extends Controller
         return redirect('/cart');
     }
 
-    public function erase(Cart $cart) {
+    public function erase(Cart $cart)
+    {
         $cart->delete();
         return redirect('/cart');
     }
