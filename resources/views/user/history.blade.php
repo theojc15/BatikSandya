@@ -11,17 +11,17 @@
                     $total = 0;
                     $produk = 0;
                 @endphp
-                <div class="accordion accordion-container" id="accordionPanelsStayOpenExample">
+                <div class="accordion accordion-container mt-3" id="accordionPanelsStayOpenExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="panelsStayOpen-heading">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapse" aria-expanded="true"
-                                aria-controls="panelsStayOpen-collapse">
+                                data-bs-target="#panelsStayOpen-collapse{{$transaction->id}}" aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapse{{$transaction->id}}">
                                 Transaction Date: {{ $transaction->transaction_date }}
                             </button>
                         </h2>
-                        <div id="panelsStayOpen-collapse" class="accordion-collapse collapse show"
-                            aria-labelledby="panelsStayOpen-heading">
+                        <div id="panelsStayOpen-collapse{{$transaction->id}}" class="accordion-collapse collapse show"
+                            aria-labelledby="panelsStayOpen-heading{{$transaction->id}}">
                             <div class="accordion-body">
                                 <table style="width: 100%;">
                                     <tr>
