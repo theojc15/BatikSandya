@@ -33,6 +33,9 @@
                 <ul class="navbar-nav right-nav">
                     @if (Auth::check())
                         @if (Auth::user()->role == 'Admin')
+                            <li class="nav-item">
+                                <a class="nav-link" href="/manage">Manage</a>
+                            </li>
                             <div class="icon-button d-flex align-items-center" style="margin: 0 1vw">
                                 <li class="nav-item">
                                     <a href="/inbox ">
