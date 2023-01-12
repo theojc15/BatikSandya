@@ -15,3 +15,7 @@ body {
 .dark-orange {
     color: #9c5911 !important;
 }
+
+input[type="password"]::-ms-clear, input[type="password"]::-ms-reveal {
+    display: none;
+}

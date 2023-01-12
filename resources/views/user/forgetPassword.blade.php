@@ -18,7 +18,7 @@
                             <div class="mb-3">
                                 <label for="email" class="orange form-label">New Password</label>
                                 <div class="input-group ">
-                                    <input name="password" class="orange form-control" id="id_password">
+                                    <input name="password" class="orange form-control" id="id_password" type="password">
                                     <span class="input-group-icon input-group-text"><i class="far fa-eye" id="togglePassword"></i> </span>
                                 </div>
                             </div>
@@ -26,7 +26,7 @@
                                 <label for="email" class="orange form-label">Repeat New Password</label>
                                 <div class="col">   
                                 <div class="input-group">
-                                    <input name="confpassword" class="orange form-control" id="conf_password">
+                                    <input name="confpassword" class="orange form-control" id="conf_password" type="password">
                                         <span class="input-group-icon input-group-text"><i class="far fa-eye" id="toggleconfPassword"></i> </span>
                                 </div>
                             </div>

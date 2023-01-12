@@ -23,7 +23,7 @@
                                         <label class="label-form orange mb-2" for="inputPassword"
                                             style="padding-left: 0.3rem">Password</label>
                                         <div class="input-group ">
-                                            <input name="password" class="orange form-control" id="id_password">
+                                            <input name="password" class="orange form-control" id="id_password" type="password">
                                             <span class="input-group-icon input-group-text"><i class="far fa-eye"
                                                     id="togglePassword"></i> </span>
                                         </div>
@@ -36,7 +36,7 @@
                                         </div>
                                         <div class="col-6 col-md-6"
                                             style="display: flex; justify-content: right; padding: 0px">
-                                            <a class="orange link-hover-register" href="">Forgot password?</a>
+                                            <a class="orange link-hover-register" href="/forget-password-initial">Forgot password?</a>
                                         </div>
                                     </div>
                                     @if ($errors->any())

@@ -43,7 +43,7 @@
                             <div class="col">
                                 <label class="label-form orange mb-2" for="password">Password</label>
                                 <div class="input-group">
-                                    <input name="password" class="orange form-control" id="id_password">
+                                    <input name="password" class="orange form-control" id="id_password" type="password">
                                         <span class="input-group-icon input-group-text"><i class="far fa-eye" id="togglePassword"></i> </span>
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                             <div class="col">
                                 <label class="label-form orange mb-2" for="conf-password">Confirm Password</label>
                                 <div class="input-group">
-                                    <input name="confpassword" class="orange form-control" id="conf_password">
+                                    <input name="confpassword" class="orange form-control" id="conf_password" type="password">
                                         <span class="input-group-icon input-group-text"><i class="far fa-eye" id="toggleconfPassword"></i> </span>
                                 </div>
                             </div>
