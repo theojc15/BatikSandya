@@ -73,12 +73,14 @@ class AuthController extends Controller
             Session::put('email', $request->email);
             Session::put('password', $request->password);
             Session::put('name', Auth::user()->name);
-            Session::put('cart', []);
             if($rememberMe == true) {
                 Cookie::queue('last_email', $request->email, 120);
                 Cookie::queue('last_password', $request->password, 120);
             }
 
+            if (Auth::user()->role == 'Admin') {
+                return redirect()->intended('/manage');
+            }
             return redirect()->intended('/');
         }
 

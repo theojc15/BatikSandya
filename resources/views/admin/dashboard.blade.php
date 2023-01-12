@@ -3,6 +3,17 @@
 @section('title', 'dashboard')
 
 @section('content')
+    @if (session()->has('message'))
+    @foreach (explode('-', session('message')) as $message)
+        <script>
+            Swal.fire({
+                title: '{{ $message }}',
+                icon: 'warning',
+                confirmButtonColor: '#E38B2A'
+            })
+        </script>
+    @endforeach
+    @endif
     <section class="admin_dashboard">
 
         <div class="container manage-container pb-5" style="width: 60%;">
@@ -17,8 +28,9 @@
 
             <div class="row pb-3">
                 <div class="form-outline mb-4">
-                    <form class="input-group" action="" method="GET">
-                        <input type="search" class="search-button form-control" name="search" placeholder="Add Category">
+                    <form class="input-group" action="/add-category" method="POST">
+                        @csrf
+                        <input type="search" class="search-button form-control" name="name" placeholder="Add Category">
                         <button type="submit" class="btn btn-search btn-primary search-icon ">
                             <i style class="fas fa-plus"></i>
                         </button>
@@ -33,7 +45,7 @@
                     </div>
                     <div class="card-body d-flex" style="flex-direction: column;">
                         <div class="row align-items-center h-100 justify-content-end pe-3">
-                            <a href="" style="text-decoration: none; width:auto">
+                            <a href="/delete-category/{{ $category->id }}" style="text-decoration: none; width:auto">
                                 <button type="button" class="btn btn-delete btn-outline-primary rounded-circle"
                                     style="width: 42px; height: 42px">
                                     <i class="fas fa-solid fa-trash"></i>
@@ -71,7 +83,8 @@
 
             <div class="row pb-3">
                 <div class="form-outline mb-4">
-                    <form class="input-group" action="" method="GET">
+                    <form class="input-group" action="/manage" method="POST">
+                        @csrf
                         <input type="search" class="search-button form-control" name="search" placeholder="Search">
                         <button type="submit" class="btn btn-search btn-primary search-icon ">
                             <i class="fas fa-search"></i>

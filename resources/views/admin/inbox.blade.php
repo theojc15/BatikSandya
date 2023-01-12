@@ -37,7 +37,9 @@
                                         <div class="modal-footer justify-content-center" style="border-top:none;">
                                             <button type="button" class="btn btn-danger w-25"
                                                 data-bs-dismiss="modal">Cancel</button>
-                                            <button type="button" class="btn btn-success w-25">Confirm</button>
+                                            <a href="/cancel/{{ $transactionHeader->id }}" class="me-2 w-25">
+                                                <button type="button" class="btn btn-success w-100">Confirm</button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +99,16 @@
                                 </div>
                             </div>
                         @endforeach
-
+                        <div class="row pt-3">
+                            <div class="col-3 d-flex flex-column align-items-start justify-content-center me-3"
+                                style="padding:0;">
+                                <h5 style="font-size: 1em; font-weight:bold;">Total</h5>
+                            </div>
+                            <div class="col-4 d-flex flex-column align-items-start justify-content-center">
+                                <h5 style="font-size: 1em; font-weight:400">Rp 100000
+                                </h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

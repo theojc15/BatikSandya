@@ -40,11 +40,14 @@
                                 {{ $errors->first() }}
                             </div>
                         @endif
-                        <div class="detail-add-cart d-flex justify-content-center">
-                            <button type="submit">
-                                <i class="fas fa-plus"></i>Add to cart
-                            </button>
-                        </div>
+
+                        @if (Auth::user()->role == 'Customer')
+                            <div class="detail-add-cart d-flex justify-content-center">
+                                <button type="submit">
+                                    <i class="fas fa-plus"></i>Add to cart
+                                </button>
+                            </div>
+                        @endif
                     </form>
                 </div>
             </div>

@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use PDO;
 
 class ProductController extends Controller
@@ -52,6 +53,14 @@ class ProductController extends Controller
         return view('admin.dashboard', ['categories' => $categories, 'products' => $products, 'categories2' => $categories2]);
     }
 
+    public function searchManage(Request $request) {
+        $categories = Category::all();
+        $products = Product::where('name', 'like', '%' . $request->search . '%')->paginate(5, ['*'], 'products');
+        $categories2 = Category::paginate(5, ['*'], 'categories');
+
+        return view('admin.dashboard', ['categories' => $categories, 'products' => $products, 'categories2' => $categories2]);
+    }
+
     public function addProductView()
     {
         $categories = Category::all();
@@ -88,6 +97,8 @@ class ProductController extends Controller
         $product->shopee_link = $request->link_shopee;
 
         $product->save();
+
+        Session::flash('message', 'Add Product Succesful');
         return redirect('/manage');
     }
 
@@ -110,6 +121,8 @@ class ProductController extends Controller
             'photo' => 'required|file|mimes:jpg,jpeg,png',
         ]);
 
+        File::delete('image/'.$product->photo);
+
         $extension = $request->photo->getClientOriginalExtension();
 
         $file = $request->photo->getClientOriginalName();
@@ -126,13 +139,36 @@ class ProductController extends Controller
         $product->shopee_link = $request->link_shopee;
 
         $product->save();
+        Session::flash('message', 'Edit Product Succesful');
         return redirect('/manage');
     }
 
     public function delete(Product $product) {
+        File::delete('image/'.$product->photo);
         $product->delete();
+        Session::flash('message', 'Delete Product Succesful');
         return redirect('/manage');
 
+    }
+
+    public function addCategory(Request $request) {
+        $validateData = $request->validate([
+            'name' => 'required'
+        ]);
+
+        $category = new Category();
+        $category->name = $request->name;
+        $category->save();
+
+        Session::flash('message', 'Add Category Succesful');
+        return redirect('/manage');
+    }
+
+    public function deleteCategory($id) {
+        $category = Category::find($id);
+        $category->delete();
+        Session::flash('message', 'Delete Category Succesful');
+        return redirect('/manage');
     }
 
 }

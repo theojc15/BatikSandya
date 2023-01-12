@@ -123,6 +123,19 @@ class TransactionController extends Controller
         return redirect('/inbox');
     }
 
+    public function cancel(TransactionHeader $transactionHeader) {
+        $transactionDetails = TransactionDetail::where('transaction_header_id', 'like', $transactionHeader->id)->get();
+        foreach($transactionDetails as $transactionDetail) {
+            $product = Product::where('id', 'like', $transactionDetail->product_id)->get();
+            $product[0]->stok += $transactionDetail->quantity;
+            $product[0]->save();
+        }
+        $transactionDetails = TransactionDetail::where('transaction_header_id', 'like', $transactionHeader->id)->delete();
+        $transactionHeader->delete();
+
+        return redirect('/inbox');
+    }
+
     public function history() {
         $categories = Category::all();
         $transactions = TransactionHeader::where('user_id', 'like', Auth::user()->id)
