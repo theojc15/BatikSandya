@@ -22,7 +22,7 @@
                             <div class="mb-3 d-grid">
                                 <button type="submit" class="btn btn-primary">ENTER </button>
                             </div>
-                            <span class="orange">Don't have an account? <a class ="orange link-hover-register" href="">sign in</a></span>
+                            <span class="orange">Don't have an account? <a class ="orange link-hover-register" href="/register">sign in</a></span>
                         </form>
                     </div>
                 </div>
