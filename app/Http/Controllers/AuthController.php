@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -156,25 +157,50 @@ class AuthController extends Controller
         return redirect('/profile');
     }
 
-    public function forgetPasswordEmail () {
+    public function passwordRequest() {
         $categories = Category::all();
-        return view ('user.forgetPasswordInitial', ['categories'=>$categories]);
+        return view('user.forgetPasswordInitial', ['categories' => $categories]);
     }
 
-    public function forgetPassword ($token) {
-        $categories = Category::all();
-        return view ('user.forgetPassword', ['categories'=>$categories, 'token' => $token]);
-    }
-
-    public function forgotPassword(Request $request) {
-        $request->validate(['email' => 'required|email:rfc,dns']);
+    public function passwordEmail(Request $request) {
+        $request->validate(['email' => 'required|email']);
 
         $status = Password::sendResetLink(
             $request->only('email')
         );
 
         return $status === Password::RESET_LINK_SENT
-                    ? back()->with(['status' => __($status)])
-                    : back()->withErrors(['email' => __($status)]);
+            ? back()->with(['status' => __($status)])
+            : back()->withErrors(['email' => __($status)]);
+    }
+
+    public function passwordReset($token) {
+        $categories = Category::all();
+        return view('user.forgetPassword', ['token' => $token, 'categories' => $categories]);
+    }
+
+    public function passwordUpdate(Request $request) {
+        // $request->validate([
+        //     'email' => 'required|email',
+        //     'password' => 'required|min:8|confirmed',
+        // ]);
+        // dd($request);
+        $status = Password::reset(
+            $request->only('email', 'password', 'password-conf', 'token'),
+            function ($user, $password) {
+
+                $user->forceFill([
+                    'password' => Hash::make($password)
+                ]);
+
+                $user->save();
+
+                event(new PasswordReset($user));
+            }
+        );
+
+        return $status === Password::PASSWORD_RESET
+            ? redirect()->route('login')->with('status', __($status))
+            : back()->withErrors(['email' => [__($status)]]);
     }
 }

@@ -63,58 +63,10 @@ Route::get('/purchase', [TransactionController::class, 'purchase']);
 Route::get('/history', [TransactionController::class, 'history']);
 
 //dummy
-Route::get('/forgot-password', function () {
-    $categories = Category::all();
-    return view('user.forgetPasswordInitial', ['categories' => $categories]);
-})->name('password.request');
+Route::get('/forgot-password', [AuthController::class, 'passwordRequest'])->name('password.request');
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Password;
+Route::post('/forgot-password', [AuthController::class, 'passwordEmail'])->name('password.email');
 
-Route::post('/forgot-password', function (Request $request) {
-    $request->validate(['email' => 'required|email']);
+Route::get('/reset-password/{token}', [AuthController::class, 'passwordReset'])->name('password.reset');
 
-    $status = Password::sendResetLink(
-        $request->only('email')
-    );
-
-    return $status === Password::RESET_LINK_SENT
-        ? back()->with(['status' => __($status)])
-        : back()->withErrors(['email' => __($status)]);
-})->name('password.email');
-
-Route::get('/reset-password/{token}', function ($token) {
-    $categories = Category::all();
-    return view('user.forgetPassword', ['token' => $token, 'categories' => $categories]);
-})->name('password.reset');
-
-use Illuminate\Auth\Events\PasswordReset;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
-
-Route::post('/reset-password', function (Request $request) {
-    // $request->validate([
-    //     'token' => 'required',
-    //     'email' => 'required|email',
-    //     'password' => 'required|min:8|confirmed',
-    // ]);
-    dd($request->only('email', 'password', 'password-conf', 'token'));
-    $status = Password::reset(
-        $request->only('email', 'password', 'password-conf', 'token'),
-        function ($user, $password) {
-            dd($user);
-            $user->forceFill([
-                'password' => Hash::make($password)
-            ]);
-
-            $user->save();
-
-            event(new PasswordReset($user));
-        }
-    );
-    // dd($status);
-
-    return $status === Password::PASSWORD_RESET
-        ? redirect()->route('login')->with('status', __($status))
-        : back()->withErrors(['email' => [__($status)]]);
-})->name('password.update');
+Route::post('/reset-password', [AuthController::class, 'passwordUpdate'])->name('password.update');

@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="col-6 col-md-6"
                                             style="display: flex; justify-content: right; padding: 0px">
-                                            <a class="orange link-hover-register" href="/forget-password">Forgot password?</a>
+                                            <a class="orange link-hover-register" href="/forgot-password">Forgot password?</a>
                                         </div>
                                     </div>
                                     @if ($errors->any())
