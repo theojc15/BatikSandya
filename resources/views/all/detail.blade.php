@@ -25,12 +25,14 @@
                         @csrf
                         <h1>{{ $product->name }}</h1>
                         <h3 class="mt-4 mb-5">Rp. {{ $product->price }}</h3>
-                        @if (Auth::user()->role == 'Customer')
-                            <div class="quantity mb-5 d-md-flex align-items-center">
-                                <label for="kuantitas">Kuantitas:</label>
-                                <input type="number" id="kuantitas" name="quantity">
-                                <p style="margin: 0;">Stok {{ $product->stok }}</p>
-                            </div>
+                        @if (Auth::check())
+                            @if (Auth::user()->role == 'Customer')
+                                <div class="quantity mb-5 d-md-flex align-items-center">
+                                    <label for="kuantitas">Kuantitas:</label>
+                                    <input type="number" id="kuantitas" name="quantity">
+                                    <p style="margin: 0;">Stok {{ $product->stok }}</p>
+                                </div>
+                            @endif
                         @endif
                         <div class="logo-container mb-3 d-flex justify-content-center">
                             <a href="{{ $product->tokopedia_link }}"><img src="{{ asset('/image/tokopedia.png') }}"
@@ -43,13 +45,14 @@
                                 {{ $errors->first() }}
                             </div>
                         @endif
-
-                        @if (Auth::user()->role == 'Customer')
-                            <div class="detail-add-cart d-flex justify-content-center">
-                                <button type="submit">
-                                    <i class="fas fa-plus"></i>Add to cart
-                                </button>
-                            </div>
+                        @if (Auth::check())
+                            @if (Auth::user()->role == 'Customer')
+                                <div class="detail-add-cart d-flex justify-content-center">
+                                    <button type="submit">
+                                        <i class="fas fa-plus"></i>Add to cart
+                                    </button>
+                                </div>
+                            @endif
                         @endif
                     </form>
                 </div>
