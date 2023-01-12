@@ -3,7 +3,17 @@
 @section('title', 'login')
 
 @section('content')
-
+    @if (session()->has('message'))
+    @foreach (explode('-', session('message')) as $message)
+        <script>
+            Swal.fire({
+                title: '{{ $message }}',
+                icon: 'warning',
+                confirmButtonColor: '#E38B2A'
+            })
+        </script>
+    @endforeach
+    @endif
     <section class="auth">
         <div class="container-fluid mt-5">
             <div class="row justify-content-center">

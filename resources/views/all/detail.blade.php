@@ -77,7 +77,7 @@
                         <h5>{{ $product->category->name }}</h5>
                     </div>
                     <div class="col view-all d-flex justify-content-end">
-                        <a href="#">View all...</a>
+                        <a href="/viewall/{{ $product->category->name }}">View all...</a>
                     </div>
                 </div>
                 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4 container-body">
