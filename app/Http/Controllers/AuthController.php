@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
@@ -98,17 +99,6 @@ class AuthController extends Controller
         return redirect('login');
     }
 
-    public function forgetPasswordEmail () {
-        $categories = Category::all();
-        return view ('user.forgetPasswordInitial', ['categories'=>$categories]);
-    }
-
-    public function forgetPassword () {
-        $categories = Category::all();
-        return view ('user.forgetPassword', ['categories'=>$categories]);
-    }
-
-
     public function profile()
     {
         $categories = Category::all();
@@ -164,5 +154,27 @@ class AuthController extends Controller
 
         $user->save();
         return redirect('/profile');
+    }
+
+    public function forgetPasswordEmail () {
+        $categories = Category::all();
+        return view ('user.forgetPasswordInitial', ['categories'=>$categories]);
+    }
+
+    public function forgetPassword ($token) {
+        $categories = Category::all();
+        return view ('user.forgetPassword', ['categories'=>$categories, 'token' => $token]);
+    }
+
+    public function forgotPassword(Request $request) {
+        $request->validate(['email' => 'required|email:rfc,dns']);
+
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
+
+        return $status === Password::RESET_LINK_SENT
+                    ? back()->with(['status' => __($status)])
+                    : back()->withErrors(['email' => __($status)]);
     }
 }

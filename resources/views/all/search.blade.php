@@ -7,8 +7,9 @@
         <div class="container-fluid mt-3" style="width: 80%; ">
             <div class="row">
                 <div class="col">
-                    <form>
-                        <input type="text" placeholder="Search">
+                    <form action="/search" method="POST">
+                        @csrf
+                        <input type="text" placeholder="Search" value="{{ $search }}">
                         <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
                     </form>
                 </div>
@@ -21,104 +22,22 @@
                     </div>
                 </div>
                 <div class="row row-cols-1 row-cols-md-3 row-cols-xl-5 g-4 container-body">
-                    <div class="col pt-4">
-                        <a class="card-link" href="#">
-                            <div class="card h-100">
-                                <img src="..." class="img-fluid card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Nama Produk</h5>
-                                    <p class="card-text">Rp. 9000000</p>
+                    @foreach($products as $product)
+                        <div class="col pt-4">
+                            <a class="card-link" href="/detail/{{ $product->id }}">
+                                <div class="card h-100">
+                                    <img src="{{ asset('image/'.$product->photo) }}" class="img-fluid card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $product->name }}</h5>
+                                        <p class="card-text">Rp. {{ $product->price }}</p>
+                                    </div>
+                                    <button class="add-cart-btn">
+                                        <i class="fas fa-plus"></i> Add to cart
+                                    </button>
                                 </div>
-                                <button class="add-cart-btn">
-                                    <i class="fas fa-plus"></i> Add to cart
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col pt-4">
-                        <a class="card-link" href="#">
-                            <div class="card h-100">
-                                <img src="..." class="img-fluid card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Nama Produk</h5>
-                                    <p class="card-text">Rp. 9000000</p>
-                                </div>
-                                <button class="add-cart-btn">
-                                    <i class="fas fa-plus"></i> Add to cart
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col pt-4">
-                        <a class="card-link" href="#">
-                            <div class="card h-100">
-                                <img src="..." class="img-fluid card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Nama Produk</h5>
-                                    <p class="card-text">Rp. 9000000</p>
-                                </div>
-                                <button class="add-cart-btn">
-                                    <i class="fas fa-plus"></i> Add to cart
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col pt-4">
-                        <a class="card-link" href="#">
-                            <div class="card h-100">
-                                <img src="..." class="img-fluid card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Nama Produk</h5>
-                                    <p class="card-text">Rp. 9000000</p>
-                                </div>
-                                <button class="add-cart-btn">
-                                    <i class="fas fa-plus"></i> Add to cart
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col pt-4">
-                        <a class="card-link" href="#">
-                            <div class="card h-100">
-                                <img src="..." class="img-fluid card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Nama Produk</h5>
-                                    <p class="card-text">Rp. 9000000</p>
-                                </div>
-                                <button class="add-cart-btn">
-                                    <i class="fas fa-plus"></i> Add to cart
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col pt-4">
-                        <a class="card-link" href="#">
-                            <div class="card h-100">
-                                <img src="..." class="img-fluid card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Nama Produk</h5>
-                                    <p class="card-text">Rp. 9000000</p>
-                                </div>
-                                <button class="add-cart-btn">
-                                    <i class="fas fa-plus"></i> Add to cart
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col pt-4">
-                        <a class="card-link" href="#">
-                            <div class="card h-100">
-                                <img src="..." class="img-fluid card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Nama Produk</h5>
-                                    <p class="card-text">Rp. 9000000</p>
-                                </div>
-                                <button class="add-cart-btn">
-                                    <i class="fas fa-plus"></i> Add to cart
-                                </button>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

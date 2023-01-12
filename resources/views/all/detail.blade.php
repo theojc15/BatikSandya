@@ -7,7 +7,8 @@
         <div class="container mt-3" style="width: 80%; ">
             <div class="row">
                 <div class="col">
-                    <form>
+                    <form action="/search" method="POST">
+                        @csrf
                         <input type="text" placeholder="Search">
                         <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
                     </form>

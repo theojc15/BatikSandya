@@ -14,7 +14,8 @@
                             <h2 class="orange card-header text-center">PASSWORD RESET</h2>
                             <p class="orange text-center mb-2 mt-5">Enter your email address that you used to register.  We'll send you an authentication number to reset your password</p>
                         </div>
-                        <form>
+                        <form method="POST" action="/forget-password">
+                            @csrf
                             <div class="mb-3">
                                 <label for="email" class="orange form-label">Email</label>
                                 <input type="email" id="email" class="form-control" name="email" required="">
