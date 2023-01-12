@@ -22,7 +22,7 @@ use App\Models\Product;
 // All
 Route::get('/viewall/{name}', [ProductController::class, 'viewcategory']);
 Route::get('/detail/{id}', [ProductController::class, 'detail']);
-Route::get('/search', [ProductController::class, 'search']);
+Route::post('/search', [ProductController::class, 'search']);
 Route::get('/', [ProductController::class, 'homeProduct']);
 
 // Guest
@@ -36,8 +36,9 @@ Route::get('/profile', [AuthController::class, 'profile']);
 Route::get('/edit-profile', [AuthController::class, 'editProfile']);
 Route::post('/edit-profile/{user}', [AuthController::class, 'changeProfile']);
 Route::get('/logout', [AuthController::class, 'logout']);
-Route::get('/forget-password-initial', [AuthController::class, 'forgetPasswordEmail']);
-Route::get('/forget-password', [AuthController::class, 'forgetPassword']);
+Route::get('/forget-password', [AuthController::class, 'forgetPasswordEmail']);
+Route::post('/forget-password', [AuthController::class, 'forgotPassword']);
+Route::get('/reset-password/{token}', [AuthController::class, 'forgetPassword'])->name('password.reset');
 
 // Admin
 Route::get('/manage', [ProductController::class, 'adminProduct']);

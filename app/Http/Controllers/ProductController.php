@@ -18,11 +18,12 @@ class ProductController extends Controller
         return view('all.dashboard', ['categories' => $categories]);
     }
 
-    public function search()
+    public function search(Request $request)
     {
         $categories = Category::all();
+        $products = Product::where('name', 'like', '%' . $request->search . '%')->get();
 
-        return view('all.search', ['categories' => $categories]);
+        return view('all.search', ['categories'=>$categories, 'products'=>$products, 'search'=>$request->search]);
     }
 
     public function detail($id)
