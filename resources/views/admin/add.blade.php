@@ -10,12 +10,12 @@
         <div class="row pb-3">
 
             <div class="col d-flex input-group-header">
-                <a href="{{ url('manage') }}" style="text-decoration: none;">
+                <a class="back-btn" href="{{ url('manage') }}" style="text-decoration: none;">
                     <button type="button" class="btn btn-back btn-secondary">
                         <i style="color:white" class="fas fa-arrow-circle-left"></i> Back
                     </button>
                 </a>
-                <div style="position: absolute; left:50%; transform:translate(-50%);">
+                <div class="add-product-header" style="position: absolute; left:50%; transform:translate(-50%);">
                     <h2 class="orange">Add Product</h2>
                 </div>
             </div>

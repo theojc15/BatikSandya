@@ -18,4 +18,8 @@
     color: #9c5911;
 }
 
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
 /* End of Navbar */

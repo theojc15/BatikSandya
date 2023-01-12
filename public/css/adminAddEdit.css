@@ -72,4 +72,23 @@
     -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
 }
 
+@media screen and (max-width: 991px) {
+    .admin_add_and_edit .input-group-header {
+        flex-direction: column;
+    }
+
+    .admin_add_and_edit .add-product-header,
+    .admin_add_and_edit .edit-product-header {
+        position: relative !important;
+        margin-top: 4vh;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .admin_add_and_edit .manage-container {
+        width: 80% !important;
+    }
+}
+
 /* End of add and edit product admin */

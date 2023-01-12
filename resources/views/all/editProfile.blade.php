@@ -6,7 +6,7 @@
     <section class="edit-profile">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-md-4">
+                <div class="col-md-4 edit-profile-container">
                     <h4 class="card-header text-center mb-3">Edit Profile</h4>
                     <div class="card">
                         <div class="card-body">
@@ -55,7 +55,7 @@
 
                                 @if ($errors->any())
                                     <div class="alert alert-danger form-outline mb-4" role="alert">
-                                        {{$errors->first()}}
+                                        {{ $errors->first() }}
                                     </div>
                                 @endif
                                 <div class="edit-profile-btn d-flex justify-content-center mt-4">

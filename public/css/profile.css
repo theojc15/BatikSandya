@@ -37,4 +37,24 @@
     height: 5vh;
 }
 
+.edit-profile .form-control {
+    background-color: #FDEEDC;
+    color: #E38B2A;
+    border: 1px #E38B2A solid;
+    border-radius: 0;
+}
+
+.edit-profile .input-group-text {
+    background-color: #E38B2A;
+    color: #FDEEDC;
+    border: 1px #E38B2A solid;
+    border-radius: 0;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .edit-profile .edit-profile-container {
+        width: 60% !important;
+    }
+}
+
 /* end profile */

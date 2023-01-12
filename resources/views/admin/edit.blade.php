@@ -15,7 +15,7 @@
                         <i style="color:white" class="fas fa-arrow-circle-left"></i> Back
                     </button>
                 </a>
-                <div style="position: absolute; left:50%; transform:translate(-50%);">
+                <div class="edit-product-header" style="position: absolute; left:50%; transform:translate(-50%);">
                     <h2 class="orange">Edit Product</h2>
                 </div>
             </div>
