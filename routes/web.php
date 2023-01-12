@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Livewire\Cart;
+use App\Models\Category;
 use App\Http\Livewire\CartComponent;
 use App\Models\Product;
 
@@ -28,7 +29,7 @@ Route::get('/', [ProductController::class, 'homeProduct']);
 // Guest
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/register', [AuthController::class, 'registercheck']);
-Route::get('/login', [AuthController::class, 'login']);
+Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'logincheck']);
 
 // Admin & User
@@ -36,9 +37,9 @@ Route::get('/profile', [AuthController::class, 'profile']);
 Route::get('/edit-profile', [AuthController::class, 'editProfile']);
 Route::post('/edit-profile/{user}', [AuthController::class, 'changeProfile']);
 Route::get('/logout', [AuthController::class, 'logout']);
-Route::get('/forget-password', [AuthController::class, 'forgetPasswordEmail']);
-Route::post('/forget-password', [AuthController::class, 'forgotPassword']);
-Route::get('/reset-password/{token}', [AuthController::class, 'forgetPassword'])->name('password.reset');
+// Route::get('/forget-password', [AuthController::class, 'forgetPasswordEmail']);
+// Route::post('/forget-password', [AuthController::class, 'forgotPassword']);
+// Route::get('/reset-password/{token}', [AuthController::class, 'forgetPassword'])->name('password.reset');
 
 // Admin
 Route::get('/manage', [ProductController::class, 'adminProduct']);
@@ -60,3 +61,60 @@ Route::post('/addcart/{product}', [TransactionController::class, 'addCart']);
 Route::get('/deletecart/{cart}', [TransactionController::class, 'erase']);
 Route::get('/purchase', [TransactionController::class, 'purchase']);
 Route::get('/history', [TransactionController::class, 'history']);
+
+//dummy
+Route::get('/forgot-password', function () {
+    $categories = Category::all();
+    return view('user.forgetPasswordInitial', ['categories' => $categories]);
+})->name('password.request');
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
+
+Route::post('/forgot-password', function (Request $request) {
+    $request->validate(['email' => 'required|email']);
+
+    $status = Password::sendResetLink(
+        $request->only('email')
+    );
+
+    return $status === Password::RESET_LINK_SENT
+        ? back()->with(['status' => __($status)])
+        : back()->withErrors(['email' => __($status)]);
+})->name('password.email');
+
+Route::get('/reset-password/{token}', function ($token) {
+    $categories = Category::all();
+    return view('user.forgetPassword', ['token' => $token, 'categories' => $categories]);
+})->name('password.reset');
+
+use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
+Route::post('/reset-password', function (Request $request) {
+    // $request->validate([
+    //     'token' => 'required',
+    //     'email' => 'required|email',
+    //     'password' => 'required|min:8|confirmed',
+    // ]);
+    dd($request->only('email', 'password', 'password-conf', 'token'));
+    $status = Password::reset(
+        $request->only('email', 'password', 'password-conf', 'token'),
+        function ($user, $password) {
+            dd($user);
+            $user->forceFill([
+                'password' => Hash::make($password)
+            ]);
+
+            $user->save();
+
+            event(new PasswordReset($user));
+        }
+    );
+    // dd($status);
+
+    return $status === Password::PASSWORD_RESET
+        ? redirect()->route('login')->with('status', __($status))
+        : back()->withErrors(['email' => [__($status)]]);
+})->name('password.update');
