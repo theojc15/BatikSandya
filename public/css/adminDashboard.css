@@ -60,6 +60,15 @@
     --bs-card-border-radius: 0rem !important;
 }
 
+.admin_dashboard input:-webkit-autofill,
+.admin_dashboard input:focus:-webkit-autofill,
+.admin_dashboard input:hover :-webkit-autofill {
+    -webkit-text-fill-color: #E38B2A !important;
+    -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+
 @media screen and (max-width: 767px) {
     .admin_dashboard .manage-container {
         width: 80% !important;

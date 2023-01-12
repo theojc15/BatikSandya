@@ -30,7 +30,7 @@
                 <div class="form-outline mb-4">
                     <form class="input-group" action="/add-category" method="POST">
                         @csrf
-                        <input type="search" class="search-button form-control" name="name" placeholder="Add Category">
+                        <input type="search" class="orange search-button form-control" name="name" placeholder="Add Category">
                         <button type="submit" class="btn btn-search btn-primary search-icon ">
                             <i style class="fas fa-plus"></i>
                         </button>
@@ -85,7 +85,7 @@
                 <div class="form-outline mb-4">
                     <form class="input-group" action="/manage" method="POST">
                         @csrf
-                        <input type="search" class="search-button form-control" name="search" placeholder="Search">
+                        <input type="search" class="orange search-button form-control" name="search" placeholder="Search">
                         <button type="submit" class="btn btn-search btn-primary search-icon ">
                             <i class="fas fa-search"></i>
                         </button>
