@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\PasswordReset as ModelsPasswordReset;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
@@ -174,17 +175,19 @@ class AuthController extends Controller
             : back()->withErrors(['email' => __($status)]);
     }
 
-    public function passwordReset($token) {
+    public function passwordReset(Request $request, $token) {
         $categories = Category::all();
-        return view('user.forgetPassword', ['token' => $token, 'categories' => $categories]);
+        
+        return view('user.forgetPassword', ['token' => $token, 'categories' => $categories, 'email'=>$request->email]);
     }
 
     public function passwordUpdate(Request $request) {
-        // $request->validate([
-        //     'email' => 'required|email',
-        //     'password' => 'required|min:8|confirmed',
-        // ]);
-        // dd($request);
+        $request->validate([
+            'token'=>'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+            'password-conf'=> 'required|same:password'
+        ]);
         $status = Password::reset(
             $request->only('email', 'password', 'password-conf', 'token'),
             function ($user, $password) {

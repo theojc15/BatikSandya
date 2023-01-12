@@ -20,7 +20,7 @@
                                 <div class="mb-3">
                                     <label for="email" class="orange form-label">Email</label>
                                     <div class="input-group ">
-                                        <input name="email" class="orange form-control" id="id_password" type="text">
+                                        <input name="email" class="orange form-control" id="id_password" type="text" value="{{ $email }}" readonly>
                                     </div>
                                 </div>
                                 <div class="mb-3">
