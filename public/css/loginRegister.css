@@ -51,6 +51,7 @@
 .auth input:-webkit-autofill:focus,
 .auth textarea:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
+    transition: background-color 5000s ease-in-out 0s;
     -webkit-text-fill-color: #E38B2A;
 }
 
@@ -92,6 +93,7 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
 .auth input:hover :-webkit-autofill {
     -webkit-text-fill-color: #E38B2A !important;
     -webkit-box-shadow: 0 0 0 1000px #FDEEDC inset !important;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 /* End of Login and Register */

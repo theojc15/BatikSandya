@@ -18,7 +18,7 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="email" class="orange form-label">Email</label>
-                                <input type="email" id="email" class="form-control" name="email" required="">
+                                <input type="email" id="email" class="orange form-control" name="email" required="">
                             </div>
                             <div class="mb-3 d-grid">
                                 <button type="submit" class="btn btn-primary">ENTER </button>
