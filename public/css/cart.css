@@ -22,7 +22,7 @@
         height: auto !important;
     }
 
-    .input-group-header {
+    .cart .input-group-header {
         width: 100% !important;
         justify-content: center;
     }
@@ -35,7 +35,7 @@
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-    .input-group-header-2 {
+    .cart .input-group-header-2 {
         width: 35% !important;
     }
 }

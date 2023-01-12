@@ -203,4 +203,18 @@ table {
     margin: 0 0.5vw 0 1vw;
 }
 
+@media screen and (max-width:1199px) {
+    .inbox .transaction-date {
+        font-size: 1.1vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .inbox .transaction-date {
+        font-size: 1.7vw;
+    }
+
+    .inbox .container-title {}
+}
+
 /* end dashboard */

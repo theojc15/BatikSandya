@@ -77,20 +77,30 @@
         height: auto !important;
     }
 
-    .manage-card-footer {
+    .admin_dashboard .manage-card-footer {
         flex-direction: row !important;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-    .card-1 {
+    .admin_dashboard .card-1 {
         flex-direction: row;
     }
 }
 
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-    .input-group-header-2 {
-        width: 45% !important;
+@media screen and (max-width: 1199px) {
+
+    .admin_dashboard .input-group-header-2,
+    .admin_dashboard .input-group-header {
+        width: 50% !important;
+    }
+}
+
+@media screen and (max-width: 991px) {
+
+    .admin_dashboard .input-group-header-2,
+    .admin_dashboard .input-group-header {
+        width: 100% !important;
     }
 }
 
