@@ -52,6 +52,17 @@
     font-size: large;
 }
 
+.detail .detail-add-cart:hover button {
+    border: none;
+    background-color: #db7b13;
+    color: #FDEEDC;
+    border-radius: 10px;
+    width: 60%;
+    height: 6vh;
+    margin: auto;
+    font-size: large;
+}
+
 .detail .detail-add-cart button i {
     margin: 0 0.5vw 0 1vw;
 }
