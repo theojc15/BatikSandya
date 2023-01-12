@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Livewire\Cart;
 use App\Http\Livewire\CartComponent;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ use App\Http\Livewire\CartComponent;
 // All
 Route::get('/viewall/{name}', [ProductController::class, 'viewcategory']);
 Route::get('/detail/{id}', [ProductController::class, 'detail']);
+Route::post('/search', [ProductController::class, 'search']);
 Route::get('/', [ProductController::class, 'homeProduct']);
 
 // Guest
@@ -34,11 +36,15 @@ Route::get('/profile', [AuthController::class, 'profile']);
 Route::get('/edit-profile', [AuthController::class, 'editProfile']);
 Route::post('/edit-profile/{user}', [AuthController::class, 'changeProfile']);
 Route::get('/logout', [AuthController::class, 'logout']);
-Route::get('/forget-password-initial', [AuthController::class, 'forgetPasswordEmail']);
-Route::get('/forget-password', [AuthController::class, 'forgetPassword']);
+Route::get('/forget-password', [AuthController::class, 'forgetPasswordEmail']);
+Route::post('/forget-password', [AuthController::class, 'forgotPassword']);
+Route::get('/reset-password/{token}', [AuthController::class, 'forgetPassword'])->name('password.reset');
 
 // Admin
 Route::get('/manage', [ProductController::class, 'adminProduct']);
+Route::post('/manage', [ProductController::class, 'searchManage']);
+Route::post('/add-category', [ProductController::class, 'addCategory']);
+Route::get('/delete-category/{id}', [ProductController::class, 'deleteCategory']);
 Route::get('/add', [ProductController::class, 'addProductView']);
 Route::post('/add', [ProductController::class, 'addProduct']);
 Route::get('/edit/{product}', [ProductController::class, 'editProductView']);
@@ -46,6 +52,7 @@ Route::post('/edit/{product}', [ProductController::class, 'editProduct']);
 Route::get('/delete/{product}', [ProductController::class, 'delete']);
 Route::get('/inbox', [TransactionController::class, 'inbox']);
 Route::get('/confirm/{transactionHeader}', [TransactionController::class, 'confirm']);
+Route::get('/cancel/{transactionHeader}', [TransactionController::class, 'cancel']);
 
 // User
 Route::get('/cart', CartComponent::class);
@@ -53,5 +60,3 @@ Route::post('/addcart/{product}', [TransactionController::class, 'addCart']);
 Route::get('/deletecart/{cart}', [TransactionController::class, 'erase']);
 Route::get('/purchase', [TransactionController::class, 'purchase']);
 Route::get('/history', [TransactionController::class, 'history']);
-
-
