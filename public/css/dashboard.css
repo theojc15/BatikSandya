@@ -203,18 +203,66 @@ table {
     margin: 0 0.5vw 0 1vw;
 }
 
+@media screen and (max-width: 767px) {
+    .inbox .transaction-date {
+        font-size: 2vw !important;
+    }
+
+    .inbox .button-container {
+        padding-right: 10px !important;
+    }
+
+    .inbox .transaction-date {
+        padding-left: 10px !important;
+    }
+
+    .inbox .container-body {
+        padding: 5px;
+    }
+
+    .inbox table {
+        width: 100% !important;
+    }
+
+    .inbox .key,
+    .inbox .total-key {
+        width: 50% !important;
+    }
+
+    .inbox .value,
+    .inbox .total-value {
+        width: 50% !important;
+    }
+
+    .inbox .total-key {
+        margin-right: 0 !important;
+    }
+
+    .inbox .total-value {
+        padding: 0 !important;
+    }
+}
+
 @media screen and (max-width:1199px) {
     .inbox .transaction-date {
         font-size: 1.1vw;
     }
 }
 
-@media screen and (max-width: 767px) {
-    .inbox .transaction-date {
-        font-size: 1.7vw;
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+    .inbox .key,
+    .inbox .total-key {
+        width: 30% !important;
     }
 
-    .inbox .container-title {}
+    .inbox .total-key {
+        margin-right: 0 !important;
+    }
+
+    .inbox .total-value {
+        padding: 0 !important;
+    }
 }
 
 /* end dashboard */

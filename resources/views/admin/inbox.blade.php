@@ -9,10 +9,10 @@
             <div class="container-fluid" style="width: 80%; ">
                 <div class="card-container mt-5">
                     <div class="row container-title d-flex align-items-center" style="height: 10vh">
-                        <div class="col" style="padding-left: 30px;">
+                        <div class="col transaction-date" style="padding-left: 30px;">
                             <h5>Transaction Date: {{ $transactionHeader->transaction_date }}</h5>
                         </div>
-                        <div class="col d-flex justify-content-end" style="padding-right: 30px;">
+                        <div class="col d-flex justify-content-end button-container" style="padding-right: 30px;">
                             <a href="/confirm/{{ $transactionHeader->id }}" class="me-2">
                                 <button type="button" class="btn btn-delete btn-outline-success rounded-circle"
                                     style="width: 42px; height: 42px">
@@ -76,35 +76,41 @@
                             </table>
                         </div>
                         @foreach ($transactionHeader->transactiondetail as $transactionDetail)
-                            <div class="downside mt-3" style="padding: 0">
-                                <div class="row">
-                                    <div class="col-3 d-flex justify-content-center align-items-center">
+                            <div class="downside mt-lg-3" style="padding: 0">
+                                <div class="row flex-column flex-lg-row">
+                                    <div class="col-12 col-lg-3 d-flex justify-content-center align-items-center">
                                         <div class="inbox-image-container">
                                             <img src="{{ asset('/image/' . $transactionDetail->product->photo) }}"
                                                 alt="...">
                                         </div>
                                     </div>
-                                    <div class="col-3 d-flex flex-column align-items-start justify-content-center ms-3">
-                                        <h5 style="font-size: 1em; font-weight:bold">Product Name</h5>
-                                        <h5 style="font-size: 1em; font-weight:bold">Quantity</h5>
-                                        <h5 style="font-size: 1em; font-weight:bold; margin-right: auto;">Sub Total</h5>
-                                    </div>
-                                    <div class="col-4 d-flex flex-column align-items-start justify-content-center">
-                                        <h5 style="font-size: 1em; font-weight:400">{{ $transactionDetail->product->name }}
-                                        </h5>
-                                        <h5 style="font-size: 1em; font-weight:400">{{ $transactionDetail->quantity }}</h5>
-                                        <h5 style="font-size: 1em; font-weight:400; margin-right: auto;">Rp
-                                            {{ $transactionDetail->quantity * $transactionDetail->product->price }}</h5>
+                                    <div class="d-flex col-lg-9">
+                                        <div
+                                            class="col-3 d-flex flex-column align-items-start justify-content-center ms-lg-3 key">
+                                            <h5 style="font-size: 1em; font-weight:bold">Product Name</h5>
+                                            <h5 style="font-size: 1em; font-weight:bold">Quantity</h5>
+                                            <h5 style="font-size: 1em; font-weight:bold; margin-right: auto;">Sub Total</h5>
+                                        </div>
+                                        <div
+                                            class="col-3 d-flex flex-column align-items-start justify-content-center w-75 value">
+                                            <h5 style="font-size: 1em; font-weight:400">
+                                                {{ $transactionDetail->product->name }}
+                                            </h5>
+                                            <h5 style="font-size: 1em; font-weight:400">{{ $transactionDetail->quantity }}
+                                            </h5>
+                                            <h5 style="font-size: 1em; font-weight:400; margin-right: auto;">Rp
+                                                {{ $transactionDetail->quantity * $transactionDetail->product->price }}</h5>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
                         <div class="row pt-3">
-                            <div class="col-3 d-flex flex-column align-items-start justify-content-center me-3"
+                            <div class="col-3 d-flex flex-column align-items-start justify-content-center me-3 total-key"
                                 style="padding:0;">
                                 <h5 style="font-size: 1em; font-weight:bold;">Total</h5>
                             </div>
-                            <div class="col-4 d-flex flex-column align-items-start justify-content-center">
+                            <div class="col-7 d-flex flex-column align-items-start justify-content-center total-value">
                                 <h5 style="font-size: 1em; font-weight:400">Rp 100000
                                 </h5>
                             </div>
