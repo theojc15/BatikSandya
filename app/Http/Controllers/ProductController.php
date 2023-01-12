@@ -18,6 +18,13 @@ class ProductController extends Controller
         return view('all.dashboard', ['categories' => $categories]);
     }
 
+    public function search()
+    {
+        $categories = Category::all();
+
+        return view('all.search', ['categories' => $categories]);
+    }
+
     public function detail($id)
     {
         $categories = Category::all();
@@ -53,7 +60,8 @@ class ProductController extends Controller
         return view('admin.dashboard', ['categories' => $categories, 'products' => $products, 'categories2' => $categories2]);
     }
 
-    public function searchManage(Request $request) {
+    public function searchManage(Request $request)
+    {
         $categories = Category::all();
         $products = Product::where('name', 'like', '%' . $request->search . '%')->paginate(5, ['*'], 'products');
         $categories2 = Category::paginate(5, ['*'], 'categories');
@@ -106,10 +114,11 @@ class ProductController extends Controller
     {
         $categories = Category::all();
 
-        return view('admin.edit', ['categories' => $categories, 'product'=>$product]);
+        return view('admin.edit', ['categories' => $categories, 'product' => $product]);
     }
 
-    public function editProduct(Request $request, Product $product) {
+    public function editProduct(Request $request, Product $product)
+    {
         $validateData = $request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -121,7 +130,7 @@ class ProductController extends Controller
             'photo' => 'required|file|mimes:jpg,jpeg,png',
         ]);
 
-        File::delete('image/'.$product->photo);
+        File::delete('image/' . $product->photo);
 
         $extension = $request->photo->getClientOriginalExtension();
 
@@ -143,15 +152,16 @@ class ProductController extends Controller
         return redirect('/manage');
     }
 
-    public function delete(Product $product) {
-        File::delete('image/'.$product->photo);
+    public function delete(Product $product)
+    {
+        File::delete('image/' . $product->photo);
         $product->delete();
         Session::flash('message', 'Delete Product Succesful');
         return redirect('/manage');
-
     }
 
-    public function addCategory(Request $request) {
+    public function addCategory(Request $request)
+    {
         $validateData = $request->validate([
             'name' => 'required'
         ]);
@@ -164,11 +174,11 @@ class ProductController extends Controller
         return redirect('/manage');
     }
 
-    public function deleteCategory($id) {
+    public function deleteCategory($id)
+    {
         $category = Category::find($id);
         $category->delete();
         Session::flash('message', 'Delete Category Succesful');
         return redirect('/manage');
     }
-
 }

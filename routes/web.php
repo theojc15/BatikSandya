@@ -22,6 +22,7 @@ use App\Models\Product;
 // All
 Route::get('/viewall/{name}', [ProductController::class, 'viewcategory']);
 Route::get('/detail/{id}', [ProductController::class, 'detail']);
+Route::get('/search', [ProductController::class, 'search']);
 Route::get('/', [ProductController::class, 'homeProduct']);
 
 // Guest
@@ -58,5 +59,3 @@ Route::post('/addcart/{product}', [TransactionController::class, 'addCart']);
 Route::get('/deletecart/{cart}', [TransactionController::class, 'erase']);
 Route::get('/purchase', [TransactionController::class, 'purchase']);
 Route::get('/history', [TransactionController::class, 'history']);
-
-
