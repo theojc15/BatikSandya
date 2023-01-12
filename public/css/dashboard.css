@@ -197,6 +197,13 @@ table {
     color: #FDEEDC;
 }
 
+.dashboard .add-cart-btn:hover,
+.detail .add-cart-btn:hover,
+.detail .category .add-cart-btn {
+    color: #FDEEDC;
+    background-color: #db7b13;
+}
+
 .dashboard .add-cart-btn i,
 .detail .add-cart-btn i,
 .category .add-cart-btn i {
