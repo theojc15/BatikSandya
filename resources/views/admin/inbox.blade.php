@@ -11,9 +11,10 @@
                 </div>
             @else
         
-            @foreach ($transactionHeaders as $transactionHeader)
                 <h3 class="text-center mt-3 mb-3 orange" style="font-weight: bold;">INBOX</h3>
-                    <div class="card-container mt-5">
+                
+                @foreach ($transactionHeaders as $transactionHeader)
+                    <div class="card-container mt-5 mb-2">
                         <div class="row container-title d-flex align-items-center" style="height: 10vh">
                             <div class="col transaction-date" style="padding-left: 30px;">
                                 <h5>Transaction Date: {{ $transactionHeader->transaction_date }}</h5>
@@ -123,9 +124,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
-        @endif
-
+                @endforeach
+            @endif     
+        </div>
     </section>
 @endsection
