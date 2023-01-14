@@ -46,7 +46,7 @@ class ProductController extends Controller
         $products = Product::where('category_id', 'like', $category[0]->id)->paginate(10);
         if ($products->isEmpty()) {
             Session::flash('message', 'Product is not available yet');
-            return redirect()->back();
+            return redirect('/');
         }
 
         return view('all.category', ['categories' => $categories, 'products' => $products]);
