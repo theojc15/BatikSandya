@@ -37,15 +37,15 @@
 }
 
 .auth .input-group-phone {
-    border-color: #ffe3c1;
     background-color: #E38B2A !important;
     color: #FFFBF5;
+    border: 1px #E38B2A solid;
 }
 
 .auth .input-group-icon {
-    border-color: #ffe3c1;
     background-color: #E38B2A !important;
     color: #FFFBF5;
+    border: 1px #E38B2A solid;
 }
 
 .auth input:-webkit-autofill:focus,

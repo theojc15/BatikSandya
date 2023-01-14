@@ -1,5 +1,5 @@
 <section class="navb">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left: 1vw; padding-right: 1vw;">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 <img src="{{ url('/image/Logo.png') }}" width="45" alt="logo"

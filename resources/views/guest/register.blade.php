@@ -65,14 +65,16 @@
                                 <div>
                                     <label class="label-form orange mb-2 align-items-center"> Gender </label>
                                 </div>
-                                <input class = "orange radio-button" type="radio" id="male" name="gender" value="male" {{ old('gender')=="male" ? 'checked='.'"'.'checked'.'"' : '' }}>
-                                <label class = "orange" for="male"> Male</label>
-                                <input class = "orange radio-button" type = "radio" id="female" name="gender" value="female" {{ old('gender')=="female" ? 'checked='.'"'.'checked'.'"' : '' }}>
-                                <label class = "orange" for="female">Female</label>
+                                <div class="align-items-center" style="height: 55%; display: flex; gap: 0.5vw;">
+                                    <input class = "orange radio-button" type="radio" id="male" name="gender" value="male" {{ old('gender')=="male" ? 'checked='.'"'.'checked'.'"' : '' }}>
+                                    <label class = "orange" for="male"> Male</label>
+                                    <input class = "orange radio-button" type = "radio" id="female" name="gender" value="female" {{ old('gender')=="female" ? 'checked='.'"'.'checked'.'"' : '' }}>
+                                    <label class = "orange" for="female">Female</label>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="form-group label-form orange mb-3 pt-3">
+                        <div class="form-group label-form orange mb-3 mt-3">
                             <label for="address" class="form-label">Address</label>
                             <textarea name="address" class="orange form-control" id="address" rows="3">{{old('address')}}</textarea>
                         </div>

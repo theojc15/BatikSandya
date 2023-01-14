@@ -40,7 +40,7 @@
                                     <label class="mb-2"> Phone Number </label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text rounded-left">+62</span>
+                                            <span class="input-group-text">+62</span>
                                         </div>
                                         <input name="phone" type="text" class="form-control" id="phone"
                                             value="{{ old('phone', Str::substr(Auth::user()->phone, 3)) }}">

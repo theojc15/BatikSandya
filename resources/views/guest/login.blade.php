@@ -16,8 +16,8 @@
     @endif
     <section class="auth">
         <div class="container-fluid mt-5">
-            <div class="row justify-content-center">
-                <div class="col-md-8 justify-content-center pt-3" style="display: flex">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-8 justify-content-center pt-3" style="display: flex; height: 80%;">
                     <div class="card card-login" style="height: auto; width: 35rem;">
                         <h2 class="header-form orange card-header">LOGIN</h4>
                             <div class="card-body">
