@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use GuzzleHttp\Handler\Proxy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Response;
 
 class TransactionController extends Controller
 {
@@ -86,13 +87,17 @@ class TransactionController extends Controller
 
     public function purchase(Request $request) {
         $validate = $request->validate([
-            'name' => 'required|string|min:5',
-            'username' => 'required|string|min:5',
-            'email' => 'required|email:rfc,dns',
-            'date_of_birth' => 'required|date|after:01-01-1900|before:today',
-            'phone'=>'required|integer',
-            'address'=> 'required'
+            'address'=> 'required',
+            'account-number'=> 'required|integer',
+            'account-name'=> 'required',
+            'photo' => 'required|file|mimes:jpg,jpeg,png'
         ]);
+
+        $extension = $request->photo->getClientOriginalExtension();
+
+        $file = $request->photo->getClientOriginalName();
+
+        $path = $request->photo->move('image', $file);
 
         $categories = Category::all();
         $carts = Cart::where('user_id', 'like', Auth::user()->id)->get();
@@ -105,6 +110,7 @@ class TransactionController extends Controller
         $transactionHeader->user_id = Auth::user()->id;
         $transactionHeader->transaction_date = Carbon::now('GMT+7')->format('Y-m-d H:i:s');
         $transactionHeader->status = 'Not Done';
+        $transactionHeader->payment_proof = $file;
         $transactionHeader->save();
 
         $lastid = $transactionHeader->id;
@@ -154,6 +160,13 @@ class TransactionController extends Controller
         $transactionHeader->delete();
 
         return redirect('/inbox');
+    }
+
+    public function download(TransactionHeader $transactionHeader) {
+        $file = $transactionHeader->payment_proof;
+        $filepath = public_path('image/'.$file);
+        return Response::download($filepath);
+
     }
 
     public function history() {

@@ -86,7 +86,7 @@
                             </div>
                             <div
                                 class="col-12 col-lg-5 d-flex align-items-center justify-content-center justify-content-lg-end upside-down">
-                                <a href="/cancel/{{ $transactionHeader->id }}" class="PoP-btn w-50 h-50"
+                                <a href="/download/{{ $transactionHeader->id }}" class="PoP-btn w-50 h-50"
                                     style=" text-decoration:none; font-size: 2.3em;">
                                     <button type="button" class="btn w-100 h-100"
                                         style="border: 1px #E38B2A solid; gap: 10px; color: #E38B2A; display:flex; justify-content:center; align-items:center;">

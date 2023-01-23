@@ -16,12 +16,12 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <form style="all: unset !important" method="POST" action="">
-                            @csrf
+                            <form style="all: unset !important" method="POST" action="/purchase" enctype="multipart/form-data">
+                                @csrf
 
                                 <div class="form-group mb-3">
                                     <label class="mb-2"> Address </label>
-                                    <input name="text" type="text" class="form-control" id="address" value="{{ $user->address }}">
+                                    <input name="address" type="text" class="form-control" id="address" value="{{ $user->address }}">
                                 </div>
 
                                 <div class="form-group mb-3">
@@ -36,17 +36,17 @@
 
                                 <div class="form-group mb-3">
                                     <label class="mb-2"> Payment Method </label>
-                                    <input name="text" type="text" class="readonly form-control" id="payment" value="BCA - 00000000" readonly>
+                                    <input name="payment-method" type="text" class="readonly form-control" id="payment" value="BCA - 00000000" readonly>
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label class="mb-2"> Account Number </label>
-                                    <input name="text" type="text" class="form-control" id="accountNumber" value="Placeholder">
+                                    <input name="account-number" type="text" class="form-control" id="accountNumber" value="{{old('account-number')}}">
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label class="mb-2"> Account Name </label>
-                                    <input name="text" type="text" class="form-control" id="accountName" value="Placeholder">
+                                    <input name="account-name" type="text" class="form-control" id="accountName" value="{{old('account-name')}}">
                                 </div>
 
                                 <label class="mb-2"> Proof of Payment </label>
@@ -55,6 +55,11 @@
                                     <input type="file" class="orange form-control" id="inputGroupFile" name="photo">
                                 </div>
 
+                                @if ($errors->any())
+                                    <div class="alert alert-danger form-outline mb-4" role="alert">
+                                        {{ $errors->first() }}
+                                    </div>
+                                @endif
 
                                 <div class="purchase-btn d-flex justify-content-center mt-4">
                                     <button type="submit">Purchase</button>

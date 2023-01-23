@@ -18,6 +18,7 @@ class CreateTransactionHeadersTable extends Migration
             $table->foreignId('user_id');
             $table->dateTime('transaction_date');
             $table->string('status');
+            $table->string('payment_proof');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

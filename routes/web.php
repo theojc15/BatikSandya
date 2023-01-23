@@ -60,6 +60,7 @@ Route::middleware('isAdmin')->group(function () {
     Route::get('/inbox', [TransactionController::class, 'inbox']);
     Route::get('/confirm/{transactionHeader}', [TransactionController::class, 'confirm']);
     Route::get('/cancel/{transactionHeader}', [TransactionController::class, 'cancel']);
+    Route::get('/download/{transactionHeader}', [TransactionController::class, 'download']);
 });
 
 // User
@@ -68,6 +69,6 @@ Route::middleware('isCustomer')->group(function () {
     Route::post('/addcart/{product}', [TransactionController::class, 'addCart']);
     Route::get('/deletecart/{cart}', [TransactionController::class, 'erase']);
     Route::get('/checkout', [TransactionController::class, 'checkout']);
-    Route::get('/purchase', [TransactionController::class, 'purchase']);
+    Route::post('/purchase', [TransactionController::class, 'purchase']);
     Route::get('/history', [TransactionController::class, 'history']);
 });
