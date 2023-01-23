@@ -3,7 +3,7 @@
 @section('title', 'category')
 
 @section('content')
-    <section class="category">
+    <section class="dashboard">
         <div class="container-fluid mt-3" style="width: 80%; ">
             <div class="row">
                 <div class="col">

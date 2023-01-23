@@ -15,7 +15,6 @@
     <link href="/css/adminAddEdit.css" rel="stylesheet">
     <link href="/css/adminDashboard.css" rel="stylesheet">
     <link href="/css/cart.css" rel="stylesheet">
-    <link href="/css/category.css" rel="stylesheet">
     <link href="/css/checkout.css" rel="stylesheet">
     <link href="/css/dashboard.css" rel="stylesheet">
     <link href="/css/detail.css" rel="stylesheet">
