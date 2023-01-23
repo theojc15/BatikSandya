@@ -5,14 +5,13 @@
 @section('content')
     <section class="inbox">
         <div class="container-fluid" style="width: 80%; ">
-            @if ($transactionHeaders->count () == 0)
-                <div class = 'pt-3' style="text-align: center;">
+            @if ($transactionHeaders->count() == 0)
+                <div class='pt-3' style="text-align: center;">
                     <h3 class="orange">Inbox is Empty</h3>
                 </div>
             @else
-        
                 <h3 class="text-center mt-3 mb-3 orange" style="font-weight: bold;">INBOX</h3>
-                
+
                 @foreach ($transactionHeaders as $transactionHeader)
                     <div class="card-container mt-5 mb-2">
                         <div class="row container-title d-flex align-items-center" style="height: 10vh">
@@ -54,7 +53,7 @@
                             </div>
                         </div>
                         <div class="row container-body">
-                            <div class="upside">
+                            <div class="col-12 col-lg-7">
                                 <table style="width: 60%;">
                                     <tr style="width: 70%;">
                                         <td style="font-weight: bold;">
@@ -82,6 +81,19 @@
                                     </tr>
                                 </table>
                             </div>
+                            <div
+                                class="col-12 col-lg-5 d-flex align-items-center justify-content-center justify-content-lg-end upside-down">
+                                <a href="/cancel/{{ $transactionHeader->id }}" class="PoP-btn w-50 h-50"
+                                    style=" text-decoration:none; font-size: 2.3em;">
+                                    <button type="button" class="btn w-100 h-100"
+                                        style="border: 1px #E38B2A solid; gap: 10px; color: #E38B2A; display:flex; justify-content:center; align-items:center;">
+                                        <div style="width: 1.8vw; margin-right: 0.5vw;">
+                                            <i class="fas fa-solid fa-download"></i>
+                                        </div>
+                                        Proof of Payment
+                                    </button>
+                                </a>
+                            </div>
                             @foreach ($transactionHeader->transactiondetail as $transactionDetail)
                                 <div class="downside mt-lg-3" style="padding: 0">
                                     <div class="row flex-column flex-lg-row">
@@ -96,17 +108,20 @@
                                                 class="col-3 d-flex flex-column align-items-start justify-content-center ms-lg-3 key">
                                                 <h5 style="font-size: 1em; font-weight:bold">Product Name</h5>
                                                 <h5 style="font-size: 1em; font-weight:bold">Quantity</h5>
-                                                <h5 style="font-size: 1em; font-weight:bold; margin-right: auto;">Sub Total</h5>
+                                                <h5 style="font-size: 1em; font-weight:bold; margin-right: auto;">Sub Total
+                                                </h5>
                                             </div>
                                             <div
                                                 class="col-3 d-flex flex-column align-items-start justify-content-center w-75 value">
                                                 <h5 style="font-size: 1em; font-weight:400">
                                                     {{ $transactionDetail->product->name }}
                                                 </h5>
-                                                <h5 style="font-size: 1em; font-weight:400">{{ $transactionDetail->quantity }}
+                                                <h5 style="font-size: 1em; font-weight:400">
+                                                    {{ $transactionDetail->quantity }}
                                                 </h5>
                                                 <h5 style="font-size: 1em; font-weight:400; margin-right: auto;">Rp
-                                                    {{ $transactionDetail->quantity * $transactionDetail->product->price }}</h5>
+                                                    {{ $transactionDetail->quantity * $transactionDetail->product->price }}
+                                                </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -125,7 +140,7 @@
                         </div>
                     </div>
                 @endforeach
-            @endif     
+            @endif
         </div>
     </section>
 @endsection

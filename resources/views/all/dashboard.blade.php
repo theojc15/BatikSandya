@@ -20,9 +20,9 @@
         <div class="container-fluid mt-3 mb-3" style="width: 80%; ">
             <div class="row">
                 <div class="col">
-                    <form action="/search" method="POST">
+                    <form action="/search" method="GET">
                         @csrf
-                        <input type="text" placeholder="Search">
+                        <input type="text" placeholder="Search" name="search">
                         <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
                     </form>
                 </div>

@@ -23,7 +23,7 @@ use App\Models\Product;
 // All
 Route::get('/viewall/{name}', [ProductController::class, 'viewcategory']);
 Route::get('/detail/{id}', [ProductController::class, 'detail']);
-Route::post('/search', [ProductController::class, 'search']);
+Route::get('/search', [ProductController::class, 'search']);
 Route::get('/', [ProductController::class, 'homeProduct']);
 
 // Guest
@@ -70,4 +70,3 @@ Route::middleware('isCustomer')->group(function () {
     Route::get('/purchase', [TransactionController::class, 'purchase']);
     Route::get('/history', [TransactionController::class, 'history']);
 });
-
