@@ -17,6 +17,16 @@
     background-color: #FF0000 !important;
 }
 
+.cart .btn-checkout {
+    background-color: #E38B2A !important;
+    border: 0;
+}
+
+.cart .btn-checkout:hover {
+    background-color: #9c5911 !important;
+    border: 0;
+}
+
 @media screen and (max-width: 991px) {
     .cart img {
         height: auto !important;

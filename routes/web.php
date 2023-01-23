@@ -67,6 +67,7 @@ Route::middleware('isCustomer')->group(function () {
     Route::get('/cart', CartComponent::class);
     Route::post('/addcart/{product}', [TransactionController::class, 'addCart']);
     Route::get('/deletecart/{cart}', [TransactionController::class, 'erase']);
+    Route::get('/checkout', [TransactionController::class, 'checkout']);
     Route::get('/purchase', [TransactionController::class, 'purchase']);
     Route::get('/history', [TransactionController::class, 'history']);
 });

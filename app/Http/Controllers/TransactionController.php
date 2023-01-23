@@ -74,7 +74,29 @@ class TransactionController extends Controller
         return redirect('/cart');
     }
 
+    public function checkout() {
+        $categories = Category::all();
+        $carts = Cart::where('user_id', 'like', Auth::user()->id)->get();
+        if (sizeof($carts) == 0) {
+            \Illuminate\Support\Facades\Session::flash('message', 'No item in cart');
+            return redirect()->back();
+        }
+
+        $transactionHeader = new TransactionHeader();
+        $transactionHeader->user_id = Auth::user()->id;
+        $transactionHeader->transaction_date = Carbon::now('GMT+7')->format('Y-m-d H:i:s');
+        $transactionHeader->status = 'Not Done';
+        $transactionHeader->save();
+
+        $lastid = $transactionHeader->id;
+
+        \Illuminate\Support\Facades\Session::flash('message', 'Checkout Successful');
+        // return redirect('/');
+        return view('user.checkout', ['categories' => $categories, 'transactionHeaders'=>$transactionHeader]);
+    }
+
     public function purchase() {
+        $categories = Category::all();
         $carts = Cart::where('user_id', 'like', Auth::user()->id)->get();
         if (sizeof($carts) == 0) {
             \Illuminate\Support\Facades\Session::flash('message', 'No item in cart');
