@@ -77,25 +77,23 @@ class TransactionController extends Controller
     public function checkout() {
         $categories = Category::all();
         $carts = Cart::where('user_id', 'like', Auth::user()->id)->get();
-        if (sizeof($carts) == 0) {
-            \Illuminate\Support\Facades\Session::flash('message', 'No item in cart');
-            return redirect()->back();
-        }
-
-        $transactionHeader = new TransactionHeader();
-        $transactionHeader->user_id = Auth::user()->id;
-        $transactionHeader->transaction_date = Carbon::now('GMT+7')->format('Y-m-d H:i:s');
-        $transactionHeader->status = 'Not Done';
-        $transactionHeader->save();
-
-        $lastid = $transactionHeader->id;
+        $user = User::with('Product')->find(Auth::user()->id);
 
         \Illuminate\Support\Facades\Session::flash('message', 'Checkout Successful');
         // return redirect('/');
-        return view('user.checkout', ['categories' => $categories, 'transactionHeaders'=>$transactionHeader]);
+        return view('user.checkout', ['categories' => $categories, 'carts'=>$carts, 'user' => $user]);
     }
 
-    public function purchase() {
+    public function purchase(Request $request) {
+        $validate = $request->validate([
+            'name' => 'required|string|min:5',
+            'username' => 'required|string|min:5',
+            'email' => 'required|email:rfc,dns',
+            'date_of_birth' => 'required|date|after:01-01-1900|before:today',
+            'phone'=>'required|integer',
+            'address'=> 'required'
+        ]);
+
         $categories = Category::all();
         $carts = Cart::where('user_id', 'like', Auth::user()->id)->get();
         if (sizeof($carts) == 0) {

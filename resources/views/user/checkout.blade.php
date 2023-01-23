@@ -1,7 +1,12 @@
 @extends('layout.layout')
 
 @section('title', 'profile')
-
+@php
+    $total = 0;
+    for ($i = 0; $i < sizeof($carts); $i++) {
+        $total += $carts[$i]->qty * $user->product[$i]->price;
+    }
+@endphp
 @section('content')
     <section class="checkout">
         <div class="container-fluid">
@@ -13,7 +18,7 @@
 
                             <div class="form-group mb-3">
                                 <label class="mb-2"> Address </label>
-                                <input name="text" type="text" class="form-control" id="address" value="Placeholder">
+                                <input name="text" type="text" class="form-control" id="address" value="{{ $user->address }}">
                             </div>
 
                             <div class="form-group mb-3">
@@ -22,7 +27,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">IDR</span>
                                     </div>
-                                    <input name="text" type="text" class="readonly form-control" id="address" value="Rp 9999999" readonly>
+                                    <input name="text" type="text" class="readonly form-control" id="address" value="Rp {{ $total }}" readonly>
                                 </div>
                             </div>
 

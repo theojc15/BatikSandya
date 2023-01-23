@@ -2,6 +2,9 @@
 
 @section('title', 'inbox')
 
+@php
+    $total = 0;
+@endphp
 @section('content')
     <section class="inbox">
         <div class="container-fluid" style="width: 80%; ">
@@ -126,6 +129,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                @php
+                                    $total = $total + ($transactionDetail->quantity * $transactionDetail->product->price);
+                                @endphp
                             @endforeach
                             <div class="row pt-3">
                                 <div class="col-3 d-flex flex-column align-items-start justify-content-center me-3 total-key"
@@ -133,7 +139,7 @@
                                     <h5 style="font-size: 1em; font-weight:bold;">Total</h5>
                                 </div>
                                 <div class="col-7 d-flex flex-column align-items-start justify-content-center total-value">
-                                    <h5 style="font-size: 1em; font-weight:400">Rp 100000
+                                    <h5 style="font-size: 1em; font-weight:400">Rp {{ $total }}
                                     </h5>
                                 </div>
                             </div>
